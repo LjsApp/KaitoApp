@@ -100,7 +100,7 @@ function ArtikelDetail() {
   return (
     <>
       <motion.div 
-        className="fixed top-[73px] lg:top-[89px] left-0 right-0 h-1 bg-primary z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
         style={{ scaleX: scrollYProgress }} 
       />
       <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
