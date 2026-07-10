@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { qkProducts, qkCategories } from "@/lib/queries";
 import { cn } from "@/lib/utils";
 
-import { CardSkeleton } from "@/components/ui/skeleton";
+import { CardSkeleton, Skeleton } from "@/components/ui/skeleton";
 
 export const Route = createFileRoute("/produk/")({
   head: () => ({
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/produk/")({
 function ProdukIndex() {
   const { t } = useTranslation();
   const { data: products = [], isLoading } = useQuery(qkProducts());
-  const { data: categories = [] } = useQuery(qkCategories());
+  const { data: categories = [], isLoading: categoriesLoading } = useQuery(qkCategories());
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");
   const [sort, setSort] = useState<string>("newest");
@@ -114,11 +114,17 @@ function ProdukIndex() {
                     <Pill active={cat === "all"} onClick={() => setCat("all")}>
                       Semua
                     </Pill>
-                    {categories.map((c) => (
-                      <Pill key={c.slug} active={cat === c.slug} onClick={() => setCat(c.slug)}>
-                        {c.name}
-                      </Pill>
-                    ))}
+                    {categoriesLoading ? (
+                      Array.from({ length: 4 }).map((_, i) => (
+                        <Skeleton key={i} className="h-7 w-20 rounded-full" />
+                      ))
+                    ) : (
+                      categories.map((c) => (
+                        <Pill key={c.slug} active={cat === c.slug} onClick={() => setCat(c.slug)}>
+                          {c.name}
+                        </Pill>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>

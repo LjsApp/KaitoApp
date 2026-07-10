@@ -21,6 +21,36 @@ import { qkProduct, qkProductsByCategory } from "@/lib/queries";
 import { useCompany } from "@/hooks/use-company";
 import { FAQS } from "@/data/content";
 
+import { Skeleton, CardSkeleton } from "@/components/ui/skeleton";
+
+function ProductDetailSkeleton() {
+  return (
+    <div className="animate-pulse">
+      <div className="bg-brand-bg text-brand-foreground py-12 border-b border-border/10">
+        <div className="mx-auto max-w-7xl container-px flex flex-col items-center">
+           <div className="h-10 w-2/3 max-w-lg rounded-xl bg-white/10" />
+           <div className="h-4 w-1/2 max-w-sm mt-4 rounded-md bg-white/10" />
+        </div>
+      </div>
+      <div className="mx-auto max-w-7xl container-px py-10 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+          <Skeleton className="aspect-square w-full rounded-2xl" />
+          <div className="space-y-6 mt-4">
+            <Skeleton className="h-6 w-32" />
+            <Skeleton className="h-12 w-3/4" />
+            <Skeleton className="h-8 w-1/3" />
+            <Skeleton className="h-24 w-full" />
+            <div className="grid grid-cols-2 gap-4 pt-6">
+              <Skeleton className="h-12 w-full rounded-xl" />
+              <Skeleton className="h-12 w-full rounded-xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export const Route = createFileRoute("/produk/$slug")({
   head: ({ params }) => ({
     meta: [
@@ -43,7 +73,7 @@ function ProductDetail() {
     enabled: !!product?.category?.slug,
   });
 
-  if (isLoading) return <div className="py-24 text-center text-muted-foreground">Memuat...</div>;
+  if (isLoading) return <ProductDetailSkeleton />;
   if (!product) {
     return (
       <div className="py-20 text-center">

@@ -31,6 +31,7 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { Counter } from "@/components/site/Counter";
 import { Reveal } from "@/components/site/Reveal";
 import { formatDate } from "@/lib/utils";
+import { CardSkeleton, Skeleton } from "@/components/ui/skeleton";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap,
@@ -249,9 +250,9 @@ function TestimonialCarousel() {
 function HomePage() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language as "id" | "en";
-  const { data: featured = [] } = useQuery(qkFeaturedProducts());
-  const { data: categories = [] } = useQuery(qkCategories());
-  const { data: articles = [] } = useQuery(qkArticles());
+  const { data: featured = [], isLoading: featuredLoading } = useQuery(qkFeaturedProducts());
+  const { data: categories = [], isLoading: categoriesLoading } = useQuery(qkCategories());
+  const { data: articles = [], isLoading: articlesLoading } = useQuery(qkArticles());
 
   return (
     <>
@@ -439,11 +440,13 @@ function HomePage() {
           </Link>
         </Reveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.06}>
-              <ProductCard product={p} />
-            </Reveal>
-          ))}
+          {featuredLoading
+            ? Array.from({ length: 6 }).map((_, i) => <CardSkeleton key={i} />)
+            : featured.map((p, i) => (
+                <Reveal key={p.slug} delay={i * 0.06}>
+                  <ProductCard product={p} />
+                </Reveal>
+              ))}
         </div>
         <div className="mt-10 text-center md:hidden">
           <Link to="/produk">
@@ -469,7 +472,11 @@ function HomePage() {
             </p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {categories.map((c, i) => (
+            {categoriesLoading
+              ? Array.from({ length: 6 }).map((_, i) => (
+                  <Skeleton key={i} className="w-full aspect-[4/3] rounded-2xl" />
+                ))
+              : categories.map((c, i) => (
               <Reveal key={c.slug} delay={i * 0.05}>
                 <Link
                   to="/kategori/$slug"
@@ -588,7 +595,9 @@ function HomePage() {
           </Link>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
-          {articles.slice(0, 3).map((a, i) => (
+          {articlesLoading
+            ? Array.from({ length: 3 }).map((_, i) => <CardSkeleton key={i} />)
+            : articles.slice(0, 3).map((a, i) => (
             <Reveal key={a.slug} delay={i * 0.06}>
               <Link
                 to="/artikel/$slug"
