@@ -2,9 +2,11 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
+import TextAlign from "@tiptap/extension-text-align";
 import {
   Bold, Italic, Heading2, Heading3, List, ListOrdered,
   Link as LinkIcon, Minus, Undo, Redo, Code, Quote, Code2,
+  AlignLeft, AlignCenter, AlignRight, AlignJustify,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -38,6 +40,11 @@ export function RichTextEditor({
       }),
       Image.configure({ inline: false }),
       Placeholder.configure({ placeholder }),
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+        alignments: ["left", "center", "right", "justify"],
+        defaultAlignment: "left",
+      }),
     ],
     content: value,
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
@@ -148,6 +155,20 @@ export function RichTextEditor({
               </ToolbarBtn>
               <ToolbarBtn onClick={() => editor.chain().focus().setHorizontalRule().run()} active={false} title="Garis Pemisah">
                 <Minus className="h-4 w-4" />
+              </ToolbarBtn>
+              <div className="w-px h-5 bg-border mx-1" />
+              {/* Text Alignment Buttons */}
+              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("left").run()} active={editor.isActive({ textAlign: "left" })} title="Rata Kiri">
+                <AlignLeft className="h-4 w-4" />
+              </ToolbarBtn>
+              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("center").run()} active={editor.isActive({ textAlign: "center" })} title="Rata Tengah">
+                <AlignCenter className="h-4 w-4" />
+              </ToolbarBtn>
+              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("right").run()} active={editor.isActive({ textAlign: "right" })} title="Rata Kanan">
+                <AlignRight className="h-4 w-4" />
+              </ToolbarBtn>
+              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("justify").run()} active={editor.isActive({ textAlign: "justify" })} title="Rata Kiri-Kanan (Justify)">
+                <AlignJustify className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
               <ToolbarBtn onClick={() => editor.chain().focus().undo().run()} active={false} title="Undo (Ctrl+Z)">

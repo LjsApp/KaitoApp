@@ -171,18 +171,14 @@ function HomePage() {
       </section>
 
       {/* ── INSIDE KTH FEATURE ── */}
-      <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-3xl shadow-soft">
-            <img
-              src={kthParts}
-              alt="Bagian-bagian Pompa KTH KAITOHIRO"
-              loading="lazy"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </Reveal>
-      </section>
+      <Reveal>
+        <img
+          src={kthParts}
+          alt="Bagian-bagian Pompa KTH KAITOHIRO"
+          loading="lazy"
+          className="w-full h-auto object-cover block"
+        />
+      </Reveal>
 
       {/* ── FEATURED PRODUCTS ── */}
       <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
