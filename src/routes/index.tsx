@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFactory from "@/assets/hero-baru.jpg";
-import copperMotor from "@/assets/copper-motor.jpg";
+import kthParts from "@/assets/kth-parts.png";
 import { useQuery } from "@tanstack/react-query";
 import { qkFeaturedProducts, qkCategories, qkArticles } from "@/lib/queries";
 import { STATS, WHY, TESTIMONIALS } from "@/data/content";
@@ -195,31 +195,18 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── COPPER MOTOR FEATURE ── */}
+      {/* ── INSIDE KTH FEATURE ── */}
       <section className="mx-auto max-w-7xl container-px pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-hero text-brand-foreground">
-          <div className="grid lg:grid-cols-2 items-stretch">
-            <div className="relative aspect-[4/3] lg:aspect-auto">
-              <img src={copperMotor} alt="Motor 100% kawat tembaga" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/80 hidden lg:block" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent lg:hidden" />
-            </div>
-            <div className="relative p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <div className="text-xs uppercase tracking-[0.2em] text-accent-orange font-semibold mb-4">Inside KTH</div>
-              <h3 className="font-display font-extrabold text-3xl md:text-4xl leading-tight">Motor 100% Kawat<br />Tembaga Murni</h3>
-              <p className="mt-5 text-white/75 leading-relaxed">
-                Tembaga murni memberikan konduktivitas tertinggi, efisiensi maksimal, dan daya tahan jangka panjang — pompa KTH mampu beroperasi 24 jam non-stop tanpa overheat.
-              </p>
-              <ul className="mt-7 space-y-3">
-                {["Efisiensi listrik tinggi", "Tidak mudah panas (anti overheat)", "Umur motor lebih panjang", "Hemat biaya operasional"].map((x) => (
-                  <li key={x} className="flex items-center gap-3 text-sm">
-                    <BadgeCheck className="h-5 w-5 text-accent-orange shrink-0" /> {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl shadow-soft">
+            <img 
+              src={kthParts} 
+              alt="Bagian-bagian Pompa KTH KAITOHIRO" 
+              loading="lazy" 
+              className="w-full h-auto object-cover" 
+            />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── CATEGORIES ── */}
