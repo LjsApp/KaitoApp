@@ -33,8 +33,14 @@ interface SortableImageProps {
 }
 
 function SortableImage({ url, index, onRemove }: SortableImageProps) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: url });
-  const style = { transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? 0.5 : 1 };
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: url,
+  });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
   return (
     <div
       ref={setNodeRef}
@@ -74,13 +80,13 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
   const [loading, setLoading] = useState(false);
   const sensors = useSensors(
     useSensor(PointerSensor),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
   );
 
   const handleFiles = async (files: FileList | null) => {
     if (!files?.length) return;
     const fileArr = Array.from(files);
-    
+
     const invalidFormat = fileArr.filter((f) => !f.type.startsWith("image/"));
     if (invalidFormat.length) {
       toast.error("Format file harus berupa gambar");
@@ -98,9 +104,9 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
       const results = await Promise.all(
         fileArr.map((file) =>
           fileToBase64(file).then((base64) =>
-            uploadImage({ data: { fileName: file.name, contentType: file.type, base64, folder } })
-          )
-        )
+            uploadImage({ data: { fileName: file.name, contentType: file.type, base64, folder } }),
+          ),
+        ),
       );
       onChange([...value, ...results.map((r) => r.url)]);
     } catch (e) {
@@ -125,7 +131,9 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
     <div className="space-y-3">
       <label className="text-xs font-semibold block">
         Galeri Produk{" "}
-        <span className="text-muted-foreground font-normal">(gambar pertama = thumbnail utama)</span>
+        <span className="text-muted-foreground font-normal">
+          (gambar pertama = thumbnail utama)
+        </span>
       </label>
 
       {/* Sortable gallery */}
@@ -144,7 +152,10 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
       {/* Upload area */}
       <div
         onClick={() => inputRef.current?.click()}
-        onDrop={(e) => { e.preventDefault(); handleFiles(e.dataTransfer.files); }}
+        onDrop={(e) => {
+          e.preventDefault();
+          handleFiles(e.dataTransfer.files);
+        }}
         onDragOver={(e) => e.preventDefault()}
         className="border-2 border-dashed border-border rounded-xl p-6 flex flex-col items-center gap-2 cursor-pointer hover:border-primary/60 hover:bg-primary/5 transition-colors"
       >
@@ -153,8 +164,12 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
         ) : (
           <>
             <ImagePlus className="h-6 w-6 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground">Tambah gambar (bisa banyak sekaligus)</span>
-            <span className="text-xs text-muted-foreground">PNG, JPG, WEBP · Total maksimal 3 MB</span>
+            <span className="text-sm text-muted-foreground">
+              Tambah gambar (bisa banyak sekaligus)
+            </span>
+            <span className="text-xs text-muted-foreground">
+              PNG, JPG, WEBP · Total maksimal 3 MB
+            </span>
           </>
         )}
       </div>
@@ -164,7 +179,10 @@ export function GalleryUpload({ value, onChange, folder = "products" }: GalleryU
         accept="image/*"
         multiple
         className="hidden"
-        onChange={(e) => { handleFiles(e.target.files); e.target.value = ""; }}
+        onChange={(e) => {
+          handleFiles(e.target.files);
+          e.target.value = "";
+        }}
       />
     </div>
   );

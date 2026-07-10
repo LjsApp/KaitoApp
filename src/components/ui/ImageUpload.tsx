@@ -12,7 +12,14 @@ interface ImageUploadProps {
   maxSizeMB?: number;
 }
 
-export function ImageUpload({ value, onChange, folder = "misc", label = "Upload Foto", className, maxSizeMB = 5 }: ImageUploadProps) {
+export function ImageUpload({
+  value,
+  onChange,
+  folder = "misc",
+  label = "Upload Foto",
+  className,
+  maxSizeMB = 5,
+}: ImageUploadProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +35,9 @@ export function ImageUpload({ value, onChange, folder = "misc", label = "Upload 
     setLoading(true);
     try {
       const base64 = await fileToBase64(file);
-      const result = await uploadImage({ data: { fileName: file.name, contentType: file.type, base64, folder } });
+      const result = await uploadImage({
+        data: { fileName: file.name, contentType: file.type, base64, folder },
+      });
       onChange(result.url);
     } catch (e) {
       toast.error("Gagal upload gambar: " + (e instanceof Error ? e.message : "unknown"));
@@ -70,7 +79,9 @@ export function ImageUpload({ value, onChange, folder = "misc", label = "Upload 
             <>
               <Upload className="h-8 w-8 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Klik atau seret gambar ke sini</span>
-              <span className="text-xs text-muted-foreground">PNG, JPG, WEBP · Maks {maxSizeMB} MB</span>
+              <span className="text-xs text-muted-foreground">
+                PNG, JPG, WEBP · Maks {maxSizeMB} MB
+              </span>
             </>
           )}
         </div>
@@ -80,7 +91,11 @@ export function ImageUpload({ value, onChange, folder = "misc", label = "Upload 
         type="file"
         accept="image/*"
         className="hidden"
-        onChange={(e) => { const f = e.target.files?.[0]; if (f) handleFile(f); e.target.value = ""; }}
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) handleFile(f);
+          e.target.value = "";
+        }}
       />
     </div>
   );

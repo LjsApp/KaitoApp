@@ -5,10 +5,11 @@ import { qkProducts, qkArticles } from "@/lib/queries";
 import { listMessagesAdmin } from "@/lib/messages.functions";
 import { useAdminVersion } from "@/lib/admin-store";
 
-const qkAdminMessages = () => queryOptions({
-  queryKey: ["admin-messages"],
-  queryFn: () => listMessagesAdmin(),
-});
+const qkAdminMessages = () =>
+  queryOptions({
+    queryKey: ["admin-messages"],
+    queryFn: () => listMessagesAdmin(),
+  });
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboard,
@@ -22,10 +23,35 @@ function AdminDashboard() {
   const unread = messages.filter((m) => !m.read).length;
 
   const cards = [
-    { to: "/admin/produk", label: "Produk", value: products.length, icon: Package, color: "from-primary to-primary/70" },
-    { to: "/admin/artikel", label: "Artikel", value: articles.length, icon: Newspaper, color: "from-accent-orange to-accent-orange/70" },
-    { to: "/admin/kontak", label: "Pesan Masuk", value: messages.length, sub: `${unread} belum dibaca`, icon: Inbox, color: "from-emerald-600 to-emerald-400" },
-    { to: "/admin/perusahaan", label: "Perusahaan", value: 1, icon: Building2, color: "from-blue-600 to-blue-400" },
+    {
+      to: "/admin/produk",
+      label: "Produk",
+      value: products.length,
+      icon: Package,
+      color: "from-primary to-primary/70",
+    },
+    {
+      to: "/admin/artikel",
+      label: "Artikel",
+      value: articles.length,
+      icon: Newspaper,
+      color: "from-accent-orange to-accent-orange/70",
+    },
+    {
+      to: "/admin/kontak",
+      label: "Pesan Masuk",
+      value: messages.length,
+      sub: `${unread} belum dibaca`,
+      icon: Inbox,
+      color: "from-emerald-600 to-emerald-400",
+    },
+    {
+      to: "/admin/perusahaan",
+      label: "Perusahaan",
+      value: 1,
+      icon: Building2,
+      color: "from-blue-600 to-blue-400",
+    },
   ] as const;
 
   return (
@@ -44,12 +70,20 @@ function AdminDashboard() {
               to={c.to}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 hover:shadow-elegant transition-all"
             >
-              <div className={`absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br ${c.color} opacity-10 group-hover:opacity-20 transition`} />
+              <div
+                className={`absolute -top-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br ${c.color} opacity-10 group-hover:opacity-20 transition`}
+              />
               <div className="flex items-start justify-between relative">
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">{c.label}</div>
-                  <div className="font-display font-extrabold text-4xl mt-2 tabular-nums">{c.value}</div>
-                  {"sub" in c && c.sub && <div className="text-xs text-muted-foreground mt-1">{c.sub}</div>}
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {c.label}
+                  </div>
+                  <div className="font-display font-extrabold text-4xl mt-2 tabular-nums">
+                    {c.value}
+                  </div>
+                  {"sub" in c && c.sub && (
+                    <div className="text-xs text-muted-foreground mt-1">{c.sub}</div>
+                  )}
                 </div>
                 <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />
@@ -72,10 +106,14 @@ function AdminDashboard() {
             {messages.slice(0, 5).map((m) => (
               <li key={m.id} className="py-3 flex items-center justify-between gap-4">
                 <div className="min-w-0">
-                  <div className="font-semibold text-sm truncate">{m.name} — {m.subject}</div>
+                  <div className="font-semibold text-sm truncate">
+                    {m.name} — {m.subject}
+                  </div>
                   <div className="text-xs text-muted-foreground truncate">{m.message}</div>
                 </div>
-                <div className="text-xs text-muted-foreground shrink-0">{new Date(m.created_at).toLocaleDateString("id-ID")}</div>
+                <div className="text-xs text-muted-foreground shrink-0">
+                  {new Date(m.created_at).toLocaleDateString("id-ID")}
+                </div>
               </li>
             ))}
           </ul>

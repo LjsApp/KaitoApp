@@ -50,7 +50,11 @@ export const productStore = {
     else list.unshift(p);
     write(K.products, list);
   },
-  remove: (slug: string) => write(K.products, productStore.all().filter((p) => p.slug !== slug)),
+  remove: (slug: string) =>
+    write(
+      K.products,
+      productStore.all().filter((p) => p.slug !== slug),
+    ),
   reset: () => write(K.products, PRODUCTS),
 };
 
@@ -65,7 +69,11 @@ export const articleStore = {
     else list.unshift(a);
     write(K.articles, list);
   },
-  remove: (slug: string) => write(K.articles, articleStore.all().filter((a) => a.slug !== slug)),
+  remove: (slug: string) =>
+    write(
+      K.articles,
+      articleStore.all().filter((a) => a.slug !== slug),
+    ),
   reset: () => write(K.articles, ARTICLES as Article[]),
 };
 
@@ -83,9 +91,16 @@ export const messageStore = {
     return msg;
   },
   update: (id: string, patch: Partial<ContactMessage>) => {
-    write(K.messages, messageStore.all().map((m) => (m.id === id ? { ...m, ...patch } : m)));
+    write(
+      K.messages,
+      messageStore.all().map((m) => (m.id === id ? { ...m, ...patch } : m)),
+    );
   },
-  remove: (id: string) => write(K.messages, messageStore.all().filter((m) => m.id !== id)),
+  remove: (id: string) =>
+    write(
+      K.messages,
+      messageStore.all().filter((m) => m.id !== id),
+    ),
 };
 
 import { useEffect, useState } from "react";

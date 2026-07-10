@@ -9,10 +9,7 @@ const ADMIN_SESSION_KEY = "kth-admin-session";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
-    meta: [
-      { title: "Login Admin — Kaito Hiro" },
-      { name: "robots", content: "noindex,nofollow" },
-    ],
+    meta: [{ title: "Login Admin — Kaito Hiro" }, { name: "robots", content: "noindex,nofollow" }],
   }),
   component: LoginPage,
 });
@@ -93,7 +90,9 @@ function PasswordInput({
             ))}
           </div>
           {strength.label && (
-            <p className={`text-xs font-medium ${strength.score < 3 ? "text-destructive" : "text-green-600"}`}>
+            <p
+              className={`text-xs font-medium ${strength.score < 3 ? "text-destructive" : "text-green-600"}`}
+            >
               {strength.label}
             </p>
           )}
@@ -118,12 +117,14 @@ function LoginPage() {
 
   // Cek apakah setup sudah dilakukan
   useEffect(() => {
-    checkAdminSetup().then(({ setup }) => {
-      setMode(setup ? "login" : "setup");
-    }).catch(() => {
-      // Jika tidak bisa cek (belum ada DB), default ke setup
-      setMode("setup");
-    });
+    checkAdminSetup()
+      .then(({ setup }) => {
+        setMode(setup ? "login" : "setup");
+      })
+      .catch(() => {
+        // Jika tidak bisa cek (belum ada DB), default ke setup
+        setMode("setup");
+      });
   }, []);
 
   const onLogin = async (e: React.FormEvent) => {
@@ -149,9 +150,18 @@ function LoginPage() {
 
   const onSetup = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!username.trim()) { toast.error("Username wajib diisi"); return; }
-    if (password.length < 8) { toast.error("Password minimal 8 karakter"); return; }
-    if (password !== confirmPassword) { toast.error("Konfirmasi password tidak cocok"); return; }
+    if (!username.trim()) {
+      toast.error("Username wajib diisi");
+      return;
+    }
+    if (password.length < 8) {
+      toast.error("Password minimal 8 karakter");
+      return;
+    }
+    if (password !== confirmPassword) {
+      toast.error("Konfirmasi password tidak cocok");
+      return;
+    }
 
     setLoading(true);
     try {
@@ -184,8 +194,14 @@ function LoginPage() {
       <div className="w-full max-w-md">
         <div className="rounded-3xl border border-border bg-card shadow-elegant p-8 md:p-10">
           <div className="flex flex-col items-center text-center mb-8">
-            <div className={`grid h-14 w-14 place-items-center rounded-2xl shadow-soft mb-4 ${mode === "setup" ? "bg-accent-orange text-white" : "bg-primary text-primary-foreground"}`}>
-              {mode === "setup" ? <ShieldCheck className="h-6 w-6" /> : <Lock className="h-6 w-6" />}
+            <div
+              className={`grid h-14 w-14 place-items-center rounded-2xl shadow-soft mb-4 ${mode === "setup" ? "bg-accent-orange text-white" : "bg-primary text-primary-foreground"}`}
+            >
+              {mode === "setup" ? (
+                <ShieldCheck className="h-6 w-6" />
+              ) : (
+                <Lock className="h-6 w-6" />
+              )}
             </div>
             <h1 className="font-display font-bold text-2xl">
               {mode === "setup" ? "Buat Akun Admin" : "Admin Panel"}
@@ -217,9 +233,23 @@ function LoginPage() {
                   />
                 </div>
               </div>
-              <PasswordInput label="Password" value={password} onChange={setPassword} showStrength />
-              <PasswordInput label="Konfirmasi Password" value={confirmPassword} onChange={setConfirmPassword} placeholder="Ulangi password" />
-              <Button type="submit" disabled={loading || password.length < 8} className="w-full h-12 rounded-xl font-bold">
+              <PasswordInput
+                label="Password"
+                value={password}
+                onChange={setPassword}
+                showStrength
+              />
+              <PasswordInput
+                label="Konfirmasi Password"
+                value={confirmPassword}
+                onChange={setConfirmPassword}
+                placeholder="Ulangi password"
+              />
+              <Button
+                type="submit"
+                disabled={loading || password.length < 8}
+                className="w-full h-12 rounded-xl font-bold"
+              >
                 {loading ? "Memproses..." : "Buat Akun Admin"}
               </Button>
             </form>
@@ -249,7 +279,9 @@ function LoginPage() {
           )}
 
           <div className="mt-6 text-center text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-primary">← Kembali ke beranda</Link>
+            <Link to="/" className="hover:text-primary">
+              ← Kembali ke beranda
+            </Link>
           </div>
         </div>
       </div>

@@ -3,8 +3,23 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import React, { useRef, useCallback, useState as useSlideState } from "react";
 import {
-  ArrowRight, ShieldCheck, Zap, Volume2, Cpu, Wrench, BadgeCheck, Award, Anchor,
-  Star, MessageCircle, Phone, Quote, Sparkles, Clock, Calendar, Maximize
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  Volume2,
+  Cpu,
+  Wrench,
+  BadgeCheck,
+  Award,
+  Anchor,
+  Star,
+  MessageCircle,
+  Phone,
+  Quote,
+  Sparkles,
+  Clock,
+  Calendar,
+  Maximize,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFactory from "@/assets/hero-baru.jpg";
@@ -18,16 +33,30 @@ import { Reveal } from "@/components/site/Reveal";
 import { formatDate } from "@/lib/utils";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  Zap, Volume2, ShieldCheck, Cpu, Wrench, BadgeCheck, Award, Anchor,
+  Zap,
+  Volume2,
+  ShieldCheck,
+  Cpu,
+  Wrench,
+  BadgeCheck,
+  Award,
+  Anchor,
 };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Kaito Hiro (KTH) — Pompa Air Andal untuk Semua Kebutuhan" },
-      { name: "description", content: "Pompa air premium ber-SNI dengan motor 100% kawat tembaga & garansi resmi 1 tahun ganti unit baru. 150+ distributor di Indonesia." },
+      {
+        name: "description",
+        content:
+          "Pompa air premium ber-SNI dengan motor 100% kawat tembaga & garansi resmi 1 tahun ganti unit baru. 150+ distributor di Indonesia.",
+      },
       { property: "og:title", content: "Kaito Hiro (KTH) — Pompa Air Premium" },
-      { property: "og:description", content: "Pompa air andal untuk semua kebutuhan rumah tangga & industri." },
+      {
+        property: "og:description",
+        content: "Pompa air andal untuk semua kebutuhan rumah tangga & industri.",
+      },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -40,14 +69,19 @@ function TestimonialCarousel() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const total = TESTIMONIALS.length;
 
-  const goTo = useCallback((idx: number) => {
-    setActive((idx + total) % total);
-  }, [total]);
+  const goTo = useCallback(
+    (idx: number) => {
+      setActive((idx + total) % total);
+    },
+    [total],
+  );
 
   // Auto-play: advance every 4 seconds
   React.useEffect(() => {
     timerRef.current = setTimeout(() => goTo(active + 1), 4000);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, [active, goTo]);
 
   const t = TESTIMONIALS[active];
@@ -59,15 +93,22 @@ function TestimonialCarousel() {
       <div className="mx-auto max-w-7xl container-px">
         {/* Header */}
         <Reveal className="text-center max-w-2xl mx-auto mb-14">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Testimoni</div>
-          <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Dipercaya Ribuan Pelanggan</h2>
+          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+            Testimoni
+          </div>
+          <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
+            Dipercaya Ribuan Pelanggan
+          </h2>
         </Reveal>
 
         {/* Carousel */}
         <div className="relative flex items-center gap-4">
           {/* Prev button */}
           <button
-            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active - 1); }}
+            onClick={() => {
+              if (timerRef.current) clearTimeout(timerRef.current);
+              goTo(active - 1);
+            }}
             className="shrink-0 hidden md:grid h-11 w-11 place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm z-10"
             aria-label="Sebelumnya"
           >
@@ -85,9 +126,13 @@ function TestimonialCarousel() {
                     <Star key={k} className="h-4 w-4 fill-accent-orange text-accent-orange" />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">"{prev.quote}"</p>
+                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">
+                  "{prev.quote}"
+                </p>
                 <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">{prev.name.charAt(0)}</div>
+                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">
+                    {prev.name.charAt(0)}
+                  </div>
                   <div>
                     <div className="font-semibold text-sm">{prev.name}</div>
                     <div className="text-xs text-muted-foreground">{prev.role}</div>
@@ -112,7 +157,9 @@ function TestimonialCarousel() {
               </div>
               <p className="text-base leading-relaxed text-foreground/90 flex-1">"{t.quote}"</p>
               <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
-                <div className="h-11 w-11 rounded-full bg-primary/15 grid place-items-center text-primary font-bold shrink-0 text-base">{t.name.charAt(0)}</div>
+                <div className="h-11 w-11 rounded-full bg-primary/15 grid place-items-center text-primary font-bold shrink-0 text-base">
+                  {t.name.charAt(0)}
+                </div>
                 <div>
                   <div className="font-semibold">{t.name}</div>
                   <div className="text-sm text-muted-foreground">{t.role}</div>
@@ -129,9 +176,13 @@ function TestimonialCarousel() {
                     <Star key={k} className="h-4 w-4 fill-accent-orange text-accent-orange" />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">"{next.quote}"</p>
+                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">
+                  "{next.quote}"
+                </p>
                 <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">{next.name.charAt(0)}</div>
+                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">
+                    {next.name.charAt(0)}
+                  </div>
                   <div>
                     <div className="font-semibold text-sm">{next.name}</div>
                     <div className="text-xs text-muted-foreground">{next.role}</div>
@@ -143,7 +194,10 @@ function TestimonialCarousel() {
 
           {/* Next button */}
           <button
-            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active + 1); }}
+            onClick={() => {
+              if (timerRef.current) clearTimeout(timerRef.current);
+              goTo(active + 1);
+            }}
             className="shrink-0 hidden md:grid h-11 w-11 place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm z-10"
             aria-label="Berikutnya"
           >
@@ -154,7 +208,10 @@ function TestimonialCarousel() {
         {/* Dots + mobile buttons */}
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
-            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active - 1); }}
+            onClick={() => {
+              if (timerRef.current) clearTimeout(timerRef.current);
+              goTo(active - 1);
+            }}
             className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white transition-all"
             aria-label="Sebelumnya"
           >
@@ -164,14 +221,20 @@ function TestimonialCarousel() {
             {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(i); }}
+                onClick={() => {
+                  if (timerRef.current) clearTimeout(timerRef.current);
+                  goTo(i);
+                }}
                 className={`rounded-full transition-all duration-300 ${i === active ? "w-6 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-border hover:bg-primary/40"}`}
                 aria-label={`Testimoni ${i + 1}`}
               />
             ))}
           </div>
           <button
-            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active + 1); }}
+            onClick={() => {
+              if (timerRef.current) clearTimeout(timerRef.current);
+              goTo(active + 1);
+            }}
             className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white transition-all"
             aria-label="Berikutnya"
           >
@@ -222,14 +285,18 @@ function HomePage() {
         <div className="relative mx-auto max-w-7xl container-px py-24 lg:py-36 w-full grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur border border-white/20 px-4 py-1.5 text-xs font-medium mb-6"
             >
               <Sparkles className="h-3.5 w-3.5 text-accent-orange" />
               {t("hero.badge")}
             </motion.div>
             <motion.h1
-              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight"
             >
               {t("hero.title").split(" ").slice(0, 2).join(" ")}{" "}
@@ -238,29 +305,42 @@ function HomePage() {
               </span>
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed"
             >
               {t("hero.sub")}
             </motion.p>
             <motion.div
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-10 flex flex-wrap gap-4"
             >
               <Link to="/produk">
-                <Button size="lg" className="bg-accent-orange text-white hover:opacity-90 shadow-glow group h-12 px-8 text-base">
+                <Button
+                  size="lg"
+                  className="bg-accent-orange text-white hover:opacity-90 shadow-glow group h-12 px-8 text-base"
+                >
                   {t("cta.seeProducts")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">
-                <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white/20 h-12 px-8 text-base">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white/20 h-12 px-8 text-base"
+                >
                   <MessageCircle className="mr-2 h-4 w-4" /> {t("cta.chatWA")}
                 </Button>
               </a>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
               className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-xs text-white/80 font-medium"
             >
               {[
@@ -271,7 +351,10 @@ function HomePage() {
                 { label: "Gantungan Pompa 100% Kuningan", icon: Anchor },
                 { label: "Motor 100% Kawat Tembaga", icon: Zap },
               ].map((item) => (
-                <span key={item.label} className="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+                <span
+                  key={item.label}
+                  className="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                >
                   <item.icon className="h-4 w-4 text-accent-orange" /> {item.label}
                 </span>
               ))}
@@ -280,14 +363,22 @@ function HomePage() {
 
           {/* Floating card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
             className="w-full max-w-md mx-auto lg:max-w-none mt-8 lg:mt-0"
           >
             <div className="relative glass-dark rounded-3xl p-8 shadow-elegant">
-              <div className="text-[10px] uppercase tracking-[0.25em] text-white/50 mb-5 font-semibold">Keunggulan Produk</div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-white/50 mb-5 font-semibold">
+                Keunggulan Produk
+              </div>
               <div className="grid grid-cols-2 gap-4 mb-6">
-                {[{ v: "10+", l: "Tahun" }, { v: "16+", l: "Distributor" }, { v: "52+", l: "Agen" }, { v: "24 Jam", l: "Non-Stop" }].map((s) => (
+                {[
+                  { v: "10+", l: "Tahun" },
+                  { v: "16+", l: "Distributor" },
+                  { v: "52+", l: "Agen" },
+                  { v: "24 Jam", l: "Non-Stop" },
+                ].map((s) => (
                   <div key={s.l} className="rounded-2xl bg-white/8 p-4">
                     <div className="font-display font-black text-2xl text-white">{s.v}</div>
                     <div className="text-xs text-white/60 mt-0.5">{s.l}</div>
@@ -298,7 +389,6 @@ function HomePage() {
                 <ShieldCheck className="h-9 w-9 text-accent-orange shrink-0" />
                 <div>
                   <div className="font-display font-bold text-sm text-white">Garansi Resmi</div>
-
                 </div>
               </div>
             </div>
@@ -332,10 +422,17 @@ function HomePage() {
       <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
         <Reveal className="flex items-end justify-between gap-4 mb-12">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Produk Unggulan</div>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Best Seller KTH</h2>
+            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+              Produk Unggulan
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
+              Best Seller KTH
+            </h2>
           </div>
-          <Link to="/produk" className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <Link
+            to="/produk"
+            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
+          >
             {t("cta.viewAll")} <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
@@ -348,7 +445,9 @@ function HomePage() {
         </div>
         <div className="mt-10 text-center md:hidden">
           <Link to="/produk">
-            <Button variant="outline" className="gap-2">Lihat Semua Produk <ArrowRight className="h-4 w-4" /></Button>
+            <Button variant="outline" className="gap-2">
+              Lihat Semua Produk <ArrowRight className="h-4 w-4" />
+            </Button>
           </Link>
         </div>
       </section>
@@ -357,9 +456,15 @@ function HomePage() {
       <section className="bg-card border-y border-border py-16 lg:py-20">
         <div className="mx-auto max-w-7xl container-px">
           <Reveal className="text-center mx-auto mb-14">
-            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Lini Produk</div>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Temukan Pompa yang Tepat</h2>
-            <p className="mt-4 text-muted-foreground">Dari pompa rumah tangga hingga industri — kami punya solusinya.</p>
+            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+              Lini Produk
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
+              Temukan Pompa yang Tepat
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Dari pompa rumah tangga hingga industri — kami punya solusinya.
+            </p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((c, i) => (
@@ -370,13 +475,20 @@ function HomePage() {
                   className="group relative block aspect-[4/3] overflow-hidden rounded-2xl hover-lift"
                 >
                   {c.image_url ? (
-                    <img src={c.image_url} alt={c.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img
+                      src={c.image_url}
+                      alt={c.name}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent-orange/40" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent-orange font-bold mb-1 line-clamp-1">{c.description}</div>
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent-orange font-bold mb-1 line-clamp-1">
+                      {c.description}
+                    </div>
                     <h3 className="font-display font-bold text-xl text-white">{c.name}</h3>
                     <div className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/80 group-hover:text-accent-orange group-hover:gap-3 transition-all font-semibold">
                       Lihat Produk <ArrowRight className="h-3.5 w-3.5" />
@@ -392,11 +504,16 @@ function HomePage() {
       {/* ── WHY KTH ── */}
       <section className="mx-auto max-w-7xl container-px py-16 lg:py-20">
         <Reveal className="mb-14">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Kenapa KTH</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+            Kenapa KTH
+          </div>
           <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
             Kualitas Premium, <span className="text-gradient">Harga Tepat</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Setiap pompa dirancang dengan komponen premium dan diuji ketat untuk performa jangka panjang.</p>
+          <p className="mt-4 text-muted-foreground">
+            Setiap pompa dirancang dengan komponen premium dan diuji ketat untuk performa jangka
+            panjang.
+          </p>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {WHY.map((w, i) => {
@@ -407,8 +524,12 @@ function HomePage() {
                   <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-display font-bold text-sm md:text-base mb-1.5">{w.title[lang]}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{w.desc[lang]}</p>
+                  <h3 className="font-display font-bold text-sm md:text-base mb-1.5">
+                    {w.title[lang]}
+                  </h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {w.desc[lang]}
+                  </p>
                 </div>
               </Reveal>
             );
@@ -426,8 +547,13 @@ function HomePage() {
               <ShieldCheck className="h-10 w-10 text-accent-orange" />
             </div>
             <div>
-              <h3 className="font-display font-extrabold text-2xl md:text-3xl">Garansi Resmi 1 Tahun Ganti Unit Baru</h3>
-              <p className="mt-2 text-white/70 leading-relaxed">Sparepart original, service support nasional, dan jaringan distributor di seluruh Indonesia.</p>
+              <h3 className="font-display font-extrabold text-2xl md:text-3xl">
+                Garansi Resmi 1 Tahun Ganti Unit Baru
+              </h3>
+              <p className="mt-2 text-white/70 leading-relaxed">
+                Sparepart original, service support nasional, dan jaringan distributor di seluruh
+                Indonesia.
+              </p>
             </div>
             <Link to="/kontak" className="shrink-0">
               <Button className="bg-accent-orange text-white hover:opacity-90 h-12 px-6 whitespace-nowrap">
@@ -445,36 +571,61 @@ function HomePage() {
       <section className="mx-auto max-w-7xl container-px py-16 lg:py-20">
         <Reveal className="flex items-end justify-between gap-4 mb-12">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Artikel & Edukasi</div>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Belajar tentang Pompa Air</h2>
+            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+              Artikel & Edukasi
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
+              Belajar tentang Pompa Air
+            </h2>
           </div>
-          <Link to="/artikel" className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all">
+          <Link
+            to="/artikel"
+            className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5 transition-all"
+          >
             Semua artikel <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-6">
           {articles.slice(0, 3).map((a, i) => (
             <Reveal key={a.slug} delay={i * 0.06}>
-              <Link to="/artikel/$slug" params={{ slug: a.slug }} className="group block rounded-2xl overflow-hidden border border-border bg-card hover-lift">
+              <Link
+                to="/artikel/$slug"
+                params={{ slug: a.slug }}
+                className="group block rounded-2xl overflow-hidden border border-border bg-card hover-lift"
+              >
                 <div className="aspect-[16/10] relative overflow-hidden">
                   {a.cover_url ? (
-                    <img src={a.cover_url} alt={a.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img
+                      src={a.cover_url}
+                      alt={a.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent-orange/10 grid place-items-center">
-                      <span className="font-display font-extrabold text-5xl text-gradient opacity-20">KTH</span>
+                      <span className="font-display font-extrabold text-5xl text-gradient opacity-20">
+                        KTH
+                      </span>
                     </div>
                   )}
                   <div className="absolute top-3 left-3">
-                    <span className="rounded-full bg-accent-orange text-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">{a.category}</span>
+                    <span className="rounded-full bg-accent-orange text-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">
+                      {a.category}
+                    </span>
                   </div>
                   {/* Overlay tipis — sedikit lebih gelap saat hover */}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {formatDate(a.published_at, { day: "numeric", month: "short" })}</span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" />{" "}
+                      {formatDate(a.published_at, { day: "numeric", month: "short" })}
+                    </span>
                   </div>
-                  <h3 className="font-display font-bold text-base md:text-lg group-hover:text-primary line-clamp-2 transition-colors">{a.title}</h3>
+                  <h3 className="font-display font-bold text-base md:text-lg group-hover:text-primary line-clamp-2 transition-colors">
+                    {a.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{a.excerpt}</p>
                 </div>
               </Link>
@@ -482,7 +633,6 @@ function HomePage() {
           ))}
         </div>
       </section>
-
 
       {/* ── CTA ── */}
       <section className="mx-auto max-w-7xl container-px pb-24">
@@ -492,10 +642,15 @@ function HomePage() {
             <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-primary-glow/30 blur-3xl" />
           </div>
           <div className="relative max-w-2xl mx-auto">
-            <div className="text-xs uppercase tracking-[0.2em] text-accent-orange font-semibold mb-4">Konsultasi Gratis</div>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl leading-tight">Masih Bingung Memilih Pompa?</h2>
+            <div className="text-xs uppercase tracking-[0.2em] text-accent-orange font-semibold mb-4">
+              Konsultasi Gratis
+            </div>
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl leading-tight">
+              Masih Bingung Memilih Pompa?
+            </h2>
             <p className="mt-5 text-white/75 text-lg leading-relaxed">
-              Tim ahli KTH siap membantu Anda menemukan pompa yang tepat sesuai kebutuhan dan anggaran.
+              Tim ahli KTH siap membantu Anda menemukan pompa yang tepat sesuai kebutuhan dan
+              anggaran.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">
@@ -504,7 +659,11 @@ function HomePage() {
                 </Button>
               </a>
               <Link to="/kontak">
-                <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white/20 h-12 px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 backdrop-blur border-white/30 text-white hover:bg-white/20 h-12 px-8"
+                >
                   <Phone className="mr-2 h-4 w-4" /> Hubungi Kami
                 </Button>
               </Link>

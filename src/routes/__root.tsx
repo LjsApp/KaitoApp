@@ -22,7 +22,9 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-[80dvh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="font-display text-[120px] leading-none font-extrabold text-gradient">404</div>
+        <div className="font-display text-[120px] leading-none font-extrabold text-gradient">
+          404
+        </div>
         <h2 className="mt-2 text-2xl font-display font-bold">Halaman tidak ditemukan</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Halaman yang Anda cari tidak tersedia atau telah dipindahkan.
@@ -102,7 +104,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Kaito Hiro" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Kaito Hiro (KTH) — Pompa Air Premium" },
-      { property: "og:description", content: "Pompa air andal ber-SNI dengan garansi resmi 1 tahun ganti unit baru." },
+      {
+        property: "og:description",
+        content: "Pompa air andal ber-SNI dengan garansi resmi 1 tahun ganti unit baru.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@kaitohiro" },
     ],
@@ -120,7 +125,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           alternateName: "KTH",
           url: "/",
           logo: "/",
-          description: "Produsen pompa air premium ber-SNI dengan jaringan 150+ distributor di Indonesia.",
+          description:
+            "Produsen pompa air premium ber-SNI dengan jaringan 150+ distributor di Indonesia.",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Jl. Industri Raya Blok C No. 12",

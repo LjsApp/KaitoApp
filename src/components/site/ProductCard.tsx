@@ -10,7 +10,9 @@ export function ProductCard({ product }: { product: DbProduct }) {
   const company = useCompany();
   const image = product.gallery?.[0] || "";
   const specs = product.specs || [];
-  const s1 = specs[0], s2 = specs[1], s3 = specs[2];
+  const s1 = specs[0],
+    s2 = specs[1],
+    s3 = specs[2];
   const shopee = product.shopee_url || company.shopee_url;
   const tokped = product.tokopedia_url || company.tokopedia_url;
 
@@ -31,7 +33,9 @@ export function ProductCard({ product }: { product: DbProduct }) {
             wrapperClassName="absolute inset-0"
           />
         ) : (
-          <div className="absolute inset-0 grid place-items-center text-muted-foreground text-xs">Tanpa Gambar</div>
+          <div className="absolute inset-0 grid place-items-center text-muted-foreground text-xs">
+            Tanpa Gambar
+          </div>
         )}
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[calc(100%-1.5rem)]">
           {product.featured && (
@@ -52,7 +56,9 @@ export function ProductCard({ product }: { product: DbProduct }) {
         <h3 className="mt-1 font-display font-bold text-base line-clamp-1 group-hover:text-primary transition-colors">
           {product.name}
         </h3>
-        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{product.tagline || product.description}</p>
+        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+          {product.tagline || product.description}
+        </p>
         {(s1 || s2 || s3) && (
           <div className="mt-4 grid grid-cols-3 gap-2 text-center">
             {s1 && <Spec label={s1.key} value={s1.value} />}
@@ -66,23 +72,41 @@ export function ProductCard({ product }: { product: DbProduct }) {
           </span>
           <div className="pointer-events-auto relative z-10 flex items-center gap-1.5">
             {product.document_url && (
-              <a href={product.document_url} target="_blank" rel="noopener noreferrer" aria-label="Download Katalog" title="Download Katalog"
+              <a
+                href={product.document_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Katalog"
+                title="Download Katalog"
                 onClick={(e) => e.stopPropagation()}
-                className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+                className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
+              >
                 <Download className="h-4 w-4" />
               </a>
             )}
             {shopee && (
-              <a href={shopee} target="_blank" rel="noopener noreferrer" aria-label="Beli di Shopee" title="Official Store Shopee"
+              <a
+                href={shopee}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Beli di Shopee"
+                title="Official Store Shopee"
                 onClick={(e) => e.stopPropagation()}
-                className="grid h-8 w-8 place-items-center rounded-lg bg-[#EE4D2D]/10 text-[#EE4D2D] hover:bg-[#EE4D2D] hover:text-white transition-colors">
+                className="grid h-8 w-8 place-items-center rounded-lg bg-[#EE4D2D]/10 text-[#EE4D2D] hover:bg-[#EE4D2D] hover:text-white transition-colors"
+              >
                 <ShoppingBag className="h-4 w-4" />
               </a>
             )}
             {tokped && (
-              <a href={tokped} target="_blank" rel="noopener noreferrer" aria-label="Beli di Tokopedia" title="Official Store Tokopedia"
+              <a
+                href={tokped}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Beli di Tokopedia"
+                title="Official Store Tokopedia"
                 onClick={(e) => e.stopPropagation()}
-                className="grid h-8 w-8 place-items-center rounded-lg bg-[#03AC0E]/10 text-[#03AC0E] hover:bg-[#03AC0E] hover:text-white transition-colors">
+                className="grid h-8 w-8 place-items-center rounded-lg bg-[#03AC0E]/10 text-[#03AC0E] hover:bg-[#03AC0E] hover:text-white transition-colors"
+              >
                 <Store className="h-4 w-4" />
               </a>
             )}
@@ -96,7 +120,9 @@ export function ProductCard({ product }: { product: DbProduct }) {
 function Spec({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-md bg-muted/60 py-1.5 px-1">
-      <div className="text-[10px] text-muted-foreground uppercase tracking-wider truncate">{label}</div>
+      <div className="text-[10px] text-muted-foreground uppercase tracking-wider truncate">
+        {label}
+      </div>
       <div className="text-xs font-semibold tabular-nums truncate">{value}</div>
     </div>
   );

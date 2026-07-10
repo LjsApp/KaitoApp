@@ -18,7 +18,10 @@ export const upsertCategory = createServerFn({ method: "POST" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const payload: Record<string, unknown> = { ...data };
     const { error } = data.id
-      ? await supabaseAdmin.from("categories" as never).update(payload as never).eq("id", data.id)
+      ? await supabaseAdmin
+          .from("categories" as never)
+          .update(payload as never)
+          .eq("id", data.id)
       : await supabaseAdmin.from("categories" as never).insert(payload as never);
     if (error) throw error;
     return { ok: true };
@@ -30,7 +33,10 @@ export const deleteCategory = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("categories" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("categories" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -43,7 +49,10 @@ export const upsertFeature = createServerFn({ method: "POST" })
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = data.id
-      ? await supabaseAdmin.from("features" as never).update({ name: data.name } as never).eq("id", data.id)
+      ? await supabaseAdmin
+          .from("features" as never)
+          .update({ name: data.name } as never)
+          .eq("id", data.id)
       : await supabaseAdmin.from("features" as never).insert({ name: data.name } as never);
     if (error) throw error;
     return { ok: true };
@@ -55,7 +64,10 @@ export const deleteFeature = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("features" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("features" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -89,15 +101,25 @@ export const upsertProduct = createServerFn({ method: "POST" })
     const payload = { ...rest } as Record<string, unknown>;
     let productId = id;
     if (id) {
-      const { error } = await supabaseAdmin.from("products" as never).update(payload as never).eq("id", id);
+      const { error } = await supabaseAdmin
+        .from("products" as never)
+        .update(payload as never)
+        .eq("id", id);
       if (error) throw error;
     } else {
-      const { data: ins, error } = await supabaseAdmin.from("products" as never).insert(payload as never).select("id").single();
+      const { data: ins, error } = await supabaseAdmin
+        .from("products" as never)
+        .insert(payload as never)
+        .select("id")
+        .single();
       if (error) throw error;
       productId = (ins as { id: string }).id;
     }
     // reset relations
-    await supabaseAdmin.from("product_features" as never).delete().eq("product_id", productId!);
+    await supabaseAdmin
+      .from("product_features" as never)
+      .delete()
+      .eq("product_id", productId!);
     if (feature_ids.length) {
       const rows = feature_ids.map((fid) => ({ product_id: productId, feature_id: fid }));
       const { error } = await supabaseAdmin.from("product_features" as never).insert(rows as never);
@@ -112,7 +134,10 @@ export const deleteProduct = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("products" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("products" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -138,7 +163,10 @@ export const upsertArticle = createServerFn({ method: "POST" })
     const { id, ...rest } = data;
     const payload = { ...rest } as Record<string, unknown>;
     const { error } = id
-      ? await supabaseAdmin.from("articles" as never).update(payload as never).eq("id", id)
+      ? await supabaseAdmin
+          .from("articles" as never)
+          .update(payload as never)
+          .eq("id", id)
       : await supabaseAdmin.from("articles" as never).insert(payload as never);
     if (error) throw error;
     return { ok: true };
@@ -150,7 +178,10 @@ export const deleteArticle = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("articles" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("articles" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -162,7 +193,10 @@ export const markMessage = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("contact_messages" as never).update({ read: data.read } as never).eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("contact_messages" as never)
+      .update({ read: data.read } as never)
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -173,7 +207,10 @@ export const deleteMessage = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("contact_messages" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("contact_messages" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -196,7 +233,10 @@ export const upsertDownload = createServerFn({ method: "POST" })
     const { id, ...rest } = data;
     const payload = { ...rest } as Record<string, unknown>;
     const { error } = id
-      ? await supabaseAdmin.from("downloads" as never).update(payload as never).eq("id", id)
+      ? await supabaseAdmin
+          .from("downloads" as never)
+          .update(payload as never)
+          .eq("id", id)
       : await supabaseAdmin.from("downloads" as never).insert(payload as never);
     if (error) throw error;
     return { ok: true };
@@ -208,7 +248,10 @@ export const deleteDownload = createServerFn({ method: "POST" })
     const { requireAdmin } = await import("./admin-session.server");
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin.from("downloads" as never).delete().eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from("downloads" as never)
+      .delete()
+      .eq("id", data.id);
     if (error) throw error;
     return { ok: true };
   });
@@ -216,7 +259,11 @@ export const deleteDownload = createServerFn({ method: "POST" })
 // ============ UPLOAD ============
 const ALLOWED_IMAGE_EXTENSIONS = new Set(["jpg", "jpeg", "png", "webp", "gif", "avif"]);
 const ALLOWED_IMAGE_CONTENT_TYPES = new Set([
-  "image/jpeg", "image/png", "image/webp", "image/gif", "image/avif",
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+  "image/avif",
 ]);
 const MAX_UPLOAD_SIZE_BYTES = 10 * 1024 * 1024; // 10 MB
 
@@ -264,9 +311,11 @@ export const uploadDocument = createServerFn({ method: "POST" })
 
     const allowedExts = new Set(["pdf", "doc", "docx", "xls", "xlsx", "zip", "rar"]);
     const ext = (data.fileName.split(".").pop() || "").toLowerCase();
-    
+
     if (!allowedExts.has(ext)) {
-      throw new Error(`Tipe file tidak diizinkan: .${ext}. Hanya file dokumen/arsip (pdf, docx, zip, dll) yang boleh diupload.`);
+      throw new Error(
+        `Tipe file tidak diizinkan: .${ext}. Hanya file dokumen/arsip (pdf, docx, zip, dll) yang boleh diupload.`,
+      );
     }
 
     const bytes = Uint8Array.from(atob(data.base64), (c) => c.charCodeAt(0));
@@ -288,4 +337,3 @@ export const uploadDocument = createServerFn({ method: "POST" })
     if (sErr) throw sErr;
     return { url: signed.signedUrl, path };
   });
-

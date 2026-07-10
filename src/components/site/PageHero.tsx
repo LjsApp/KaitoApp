@@ -14,7 +14,9 @@ export function Breadcrumb({ items }: { items: { label: string; to?: string }[] 
           <li key={i} className="flex items-center gap-1.5">
             <ChevronRight className="h-3.5 w-3.5 opacity-50" />
             {item.to && i < items.length - 1 ? (
-              <Link to={item.to} className="hover:text-primary">{item.label}</Link>
+              <Link to={item.to} className="hover:text-primary">
+                {item.label}
+              </Link>
             ) : (
               <span className="text-foreground font-medium">{item.label}</span>
             )}

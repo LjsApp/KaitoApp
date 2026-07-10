@@ -4,6 +4,9 @@ import { pbkdf2Sync, randomBytes, timingSafeEqual } from "node:crypto";
 
 type AdminSession = { admin?: boolean; username?: string };
 
+// --- Rate Limiting (Basic) ---
+const loginAttempts = new Map<string, { count: number; lockedUntil: number }>();
+
 function config() {
   const secret = process.env.ADMIN_SESSION_SECRET;
   // Di production WAJIB set ADMIN_SESSION_SECRET — jika tidak, session bisa dipalsukan.
@@ -86,13 +89,32 @@ export async function setupAdminCredentials(username: string, password: string):
 export async function updateAdminCredentials(
   currentPassword: string,
   newUsername: string,
-  newPassword: string
+  newPassword: string,
 ): Promise<{ ok: boolean; error?: string }> {
   const creds = await getAdminCredentials();
   if (!creds) return { ok: false, error: "Belum ada akun yang dibuat" };
+
+  const now = Date.now();
+  const attempt = loginAttempts.get(creds.username) || { count: 0, lockedUntil: 0 };
+
+  if (attempt.lockedUntil > now) {
+    return { ok: false, error: "Terlalu banyak percobaan. Coba lagi dalam beberapa menit." };
+  }
+
   if (!verifyPassword(currentPassword, creds.password_hash)) {
+    attempt.count += 1;
+    if (attempt.count >= 5) {
+      attempt.lockedUntil = now + 5 * 60 * 1000;
+      attempt.count = 0;
+    }
+    loginAttempts.set(creds.username, attempt);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return { ok: false, error: "Password saat ini salah" };
   }
+
+  // Success: reset attempts
+  loginAttempts.delete(creds.username);
+
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const hash = hashPassword(newPassword);
   const { error } = await supabaseAdmin
@@ -106,10 +128,29 @@ export async function updateAdminCredentials(
 // ── Session functions ──────────────────────────────────────────────────────────
 
 export async function loginAdmin(username: string, password: string): Promise<boolean> {
+  const now = Date.now();
+  const attempt = loginAttempts.get(username) || { count: 0, lockedUntil: 0 };
+
+  if (attempt.lockedUntil > now) {
+    return false; // Locked out
+  }
+
   const creds = await getAdminCredentials();
-  if (!creds) return false;
-  if (username !== creds.username) return false;
-  if (!verifyPassword(password, creds.password_hash)) return false;
+  if (!creds || username !== creds.username || !verifyPassword(password, creds.password_hash)) {
+    attempt.count += 1;
+    if (attempt.count >= 5) {
+      // Lock for 5 minutes after 5 failed attempts
+      attempt.lockedUntil = now + 5 * 60 * 1000;
+      attempt.count = 0;
+    }
+    loginAttempts.set(username, attempt);
+    // Artificial delay to mitigate brute force
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    return false;
+  }
+
+  // Success: reset attempts
+  loginAttempts.delete(username);
 
   const session = await useSession<AdminSession>(config());
   await session.update({ admin: true, username });

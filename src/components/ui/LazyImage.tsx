@@ -21,7 +21,7 @@ export function LazyImage({ src, alt, className, wrapperClassName, ...props }: L
       {!isLoaded && !error && (
         <div className="absolute inset-0 animate-pulse bg-muted-foreground/10" />
       )}
-      
+
       {/* Fallback jika error memuat gambar */}
       {error && (
         <div className="absolute inset-0 grid place-items-center bg-muted text-xs text-muted-foreground">
@@ -43,7 +43,7 @@ export function LazyImage({ src, alt, className, wrapperClassName, ...props }: L
           className={cn(
             "h-full w-full object-cover transition-opacity duration-500",
             isLoaded ? "opacity-100" : "opacity-0",
-            className
+            className,
           )}
           {...props}
         />

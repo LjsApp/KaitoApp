@@ -75,10 +75,14 @@ export function SiteHeader() {
             <span className="inline-flex items-center gap-1.5">
               <Phone className="h-3 w-3 hidden sm:block" /> {company.phone || "+62 21 5000 1234"}
             </span>
-            <span className="opacity-70 hidden sm:inline">{company.working_hours || "Senin–Sabtu, 08.00–17.00 WIB"}</span>
+            <span className="opacity-70 hidden sm:inline">
+              {company.working_hours || "Senin–Sabtu, 08.00–17.00 WIB"}
+            </span>
           </div>
           <div className="flex items-center gap-3">
-            <Link to="/download" className="hover:underline">Download Center</Link>
+            <Link to="/download" className="hover:underline">
+              Download Center
+            </Link>
           </div>
         </div>
       </div>
@@ -101,7 +105,8 @@ export function SiteHeader() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {NAV.map((item) => {
-              const active = pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
+              const active =
+                pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
               if (item.mega) {
                 return (
                   <div
@@ -131,11 +136,32 @@ export function SiteHeader() {
                               onClick={() => setMegaOpen(false)}
                             >
                               <div className="h-10 w-10 rounded-lg bg-gradient-primary/10 grid place-items-center text-primary shrink-0 overflow-hidden">
-                                {c.image_url ? <img src={c.image_url} alt={c.name} className="h-full w-full object-cover" /> : <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /></svg>}
+                                {c.image_url ? (
+                                  <img
+                                    src={c.image_url}
+                                    alt={c.name}
+                                    className="h-full w-full object-cover"
+                                  />
+                                ) : (
+                                  <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                  >
+                                    <circle cx="12" cy="12" r="9" />
+                                  </svg>
+                                )}
                               </div>
                               <div className="min-w-0">
-                                <div className="font-semibold text-sm group-hover:text-primary">{c.name}</div>
-                                <div className="text-xs text-muted-foreground line-clamp-1">{c.description}</div>
+                                <div className="font-semibold text-sm group-hover:text-primary">
+                                  {c.name}
+                                </div>
+                                <div className="text-xs text-muted-foreground line-clamp-1">
+                                  {c.description}
+                                </div>
                               </div>
                             </Link>
                           ))}
@@ -173,7 +199,12 @@ export function SiteHeader() {
             <Button variant="ghost" size="icon" onClick={toggleDark} aria-label="Toggle theme">
               {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
-            <a href={`https://wa.me/${company.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex">
+            <a
+              href={`https://wa.me/${company.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex"
+            >
               <Button className="bg-gradient-warm text-accent-orange-foreground hover:opacity-90 shadow-soft">
                 Hubungi Kami
               </Button>
@@ -216,7 +247,12 @@ export function SiteHeader() {
                   >
                     Download Center
                   </Link>
-                  <a href={`https://wa.me/${company.whatsapp}`} target="_blank" rel="noopener noreferrer" className="mt-4">
+                  <a
+                    href={`https://wa.me/${company.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4"
+                  >
                     <Button
                       className="w-full bg-gradient-warm text-accent-orange-foreground"
                       onClick={() => setMobileOpen(false)}

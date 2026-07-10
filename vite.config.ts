@@ -12,23 +12,12 @@ export default ({ mode }: { mode: string }) => {
   return defineConfig({
     define: {
       // Inject server-only vars — hanya tersedia di server bundle, tidak ke client
-      "process.env.SUPABASE_URL": JSON.stringify(
-        env.SUPABASE_URL || env.VITE_SUPABASE_URL
-      ),
-      "process.env.SUPABASE_SERVICE_ROLE_KEY": JSON.stringify(
-        env.SUPABASE_SERVICE_ROLE_KEY
-      ),
-      "process.env.ADMIN_SESSION_SECRET": JSON.stringify(
-        env.ADMIN_SESSION_SECRET
-      ),
+      "process.env.SUPABASE_URL": JSON.stringify(env.SUPABASE_URL || env.VITE_SUPABASE_URL),
+      "process.env.SUPABASE_SERVICE_ROLE_KEY": JSON.stringify(env.SUPABASE_SERVICE_ROLE_KEY),
+      "process.env.ADMIN_SESSION_SECRET": JSON.stringify(env.ADMIN_SESSION_SECRET),
       "process.env.NODE_ENV": JSON.stringify(mode),
     },
-    plugins: [
-      tsconfigPaths(),
-      tanstackStart(),
-      viteReact(),
-      tailwindcss(),
-    ],
+    plugins: [tsconfigPaths(), tanstackStart(), viteReact(), tailwindcss()],
     server: {
       port: 8080,
       host: "0.0.0.0",

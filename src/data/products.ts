@@ -137,7 +137,10 @@ export const PRODUCTS: Product[] = [
       discharge: "15 m",
       voltage: "220 V / 50 Hz",
       weight: "8 kg",
-      application: { id: "Booster lantai atas, water heater", en: "Upper-floor boost, water heater" },
+      application: {
+        id: "Booster lantai atas, water heater",
+        en: "Upper-floor boost, water heater",
+      },
     },
     features: [
       { id: "Flow switch otomatis", en: "Auto flow switch" },

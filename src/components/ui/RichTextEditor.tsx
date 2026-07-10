@@ -4,9 +4,23 @@ import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 import {
-  Bold, Italic, Heading2, Heading3, List, ListOrdered,
-  Link as LinkIcon, Minus, Undo, Redo, Code, Quote, Code2,
-  AlignLeft, AlignCenter, AlignRight, AlignJustify,
+  Bold,
+  Italic,
+  Heading2,
+  Heading3,
+  List,
+  ListOrdered,
+  Link as LinkIcon,
+  Minus,
+  Undo,
+  Redo,
+  Code,
+  Quote,
+  Code2,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -50,7 +64,8 @@ export function RichTextEditor({
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
     editorProps: {
       attributes: {
-        class: "min-h-[320px] outline-none px-4 py-3 text-sm leading-relaxed prose prose-sm max-w-none focus:outline-none",
+        class:
+          "min-h-[320px] outline-none px-4 py-3 text-sm leading-relaxed prose prose-sm max-w-none focus:outline-none",
       },
     },
   });
@@ -84,10 +99,17 @@ export function RichTextEditor({
   if (!editor) return null;
 
   const ToolbarBtn = ({
-    onClick, active, title, children, danger,
+    onClick,
+    active,
+    title,
+    children,
+    danger,
   }: {
-    onClick: () => void; active?: boolean; title: string;
-    children: React.ReactNode; danger?: boolean;
+    onClick: () => void;
+    active?: boolean;
+    title: string;
+    children: React.ReactNode;
+    danger?: boolean;
   }) => (
     <button
       type="button"
@@ -97,8 +119,8 @@ export function RichTextEditor({
         danger
           ? "text-accent-orange hover:bg-accent-orange/10"
           : active
-          ? "bg-primary text-white"
-          : "text-muted-foreground hover:bg-accent hover:text-foreground"
+            ? "bg-primary text-white"
+            : "text-muted-foreground hover:bg-accent hover:text-foreground"
       }`}
     >
       {children}
@@ -123,58 +145,118 @@ export function RichTextEditor({
         <div className="flex flex-wrap items-center gap-1 border-b border-border px-3 py-2 bg-muted/40">
           {!htmlMode && (
             <>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleBold().run()} active={editor.isActive("bold")} title="Bold (Ctrl+B)">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleBold().run()}
+                active={editor.isActive("bold")}
+                title="Bold (Ctrl+B)"
+              >
                 <Bold className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleItalic().run()} active={editor.isActive("italic")} title="Italic (Ctrl+I)">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleItalic().run()}
+                active={editor.isActive("italic")}
+                title="Italic (Ctrl+I)"
+              >
                 <Italic className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleCode().run()} active={editor.isActive("code")} title="Inline Code">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleCode().run()}
+                active={editor.isActive("code")}
+                title="Inline Code"
+              >
                 <Code className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()} active={editor.isActive("heading", { level: 2 })} title="Heading 2">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                active={editor.isActive("heading", { level: 2 })}
+                title="Heading 2"
+              >
                 <Heading2 className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()} active={editor.isActive("heading", { level: 3 })} title="Heading 3">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+                active={editor.isActive("heading", { level: 3 })}
+                title="Heading 3"
+              >
                 <Heading3 className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleBulletList().run()} active={editor.isActive("bulletList")} title="Bullet List">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleBulletList().run()}
+                active={editor.isActive("bulletList")}
+                title="Bullet List"
+              >
                 <List className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleOrderedList().run()} active={editor.isActive("orderedList")} title="Ordered List">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                active={editor.isActive("orderedList")}
+                title="Ordered List"
+              >
                 <ListOrdered className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().toggleBlockquote().run()} active={editor.isActive("blockquote")} title="Blockquote">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().toggleBlockquote().run()}
+                active={editor.isActive("blockquote")}
+                title="Blockquote"
+              >
                 <Quote className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
               <ToolbarBtn onClick={setLink} active={editor.isActive("link")} title="Tambah Link">
                 <LinkIcon className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().setHorizontalRule().run()} active={false} title="Garis Pemisah">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().setHorizontalRule().run()}
+                active={false}
+                title="Garis Pemisah"
+              >
                 <Minus className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
               {/* Text Alignment Buttons */}
-              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("left").run()} active={editor.isActive({ textAlign: "left" })} title="Rata Kiri">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().setTextAlign("left").run()}
+                active={editor.isActive({ textAlign: "left" })}
+                title="Rata Kiri"
+              >
                 <AlignLeft className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("center").run()} active={editor.isActive({ textAlign: "center" })} title="Rata Tengah">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().setTextAlign("center").run()}
+                active={editor.isActive({ textAlign: "center" })}
+                title="Rata Tengah"
+              >
                 <AlignCenter className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("right").run()} active={editor.isActive({ textAlign: "right" })} title="Rata Kanan">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().setTextAlign("right").run()}
+                active={editor.isActive({ textAlign: "right" })}
+                title="Rata Kanan"
+              >
                 <AlignRight className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().setTextAlign("justify").run()} active={editor.isActive({ textAlign: "justify" })} title="Rata Kiri-Kanan (Justify)">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+                active={editor.isActive({ textAlign: "justify" })}
+                title="Rata Kiri-Kanan (Justify)"
+              >
                 <AlignJustify className="h-4 w-4" />
               </ToolbarBtn>
               <div className="w-px h-5 bg-border mx-1" />
-              <ToolbarBtn onClick={() => editor.chain().focus().undo().run()} active={false} title="Undo (Ctrl+Z)">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().undo().run()}
+                active={false}
+                title="Undo (Ctrl+Z)"
+              >
                 <Undo className="h-4 w-4" />
               </ToolbarBtn>
-              <ToolbarBtn onClick={() => editor.chain().focus().redo().run()} active={false} title="Redo (Ctrl+Y)">
+              <ToolbarBtn
+                onClick={() => editor.chain().focus().redo().run()}
+                active={false}
+                title="Redo (Ctrl+Y)"
+              >
                 <Redo className="h-4 w-4" />
               </ToolbarBtn>
             </>
@@ -184,7 +266,11 @@ export function RichTextEditor({
           <button
             type="button"
             onClick={htmlMode ? exitHtmlMode : enterHtmlMode}
-            title={htmlMode ? "Kembali ke Visual Editor (apply HTML)" : "Mode HTML — paste atau edit HTML langsung"}
+            title={
+              htmlMode
+                ? "Kembali ke Visual Editor (apply HTML)"
+                : "Mode HTML — paste atau edit HTML langsung"
+            }
             className={`ml-auto inline-flex items-center gap-1.5 h-7 px-3 rounded-md text-xs font-semibold transition-colors ${
               htmlMode
                 ? "bg-accent-orange text-white hover:bg-accent-orange/90"
@@ -206,7 +292,9 @@ export function RichTextEditor({
               placeholder="Paste HTML di sini... contoh: <h2>Judul</h2><p>Paragraf</p>"
               spellCheck={false}
             />
-            <div className="absolute top-2 right-2 text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded font-mono">HTML</div>
+            <div className="absolute top-2 right-2 text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded font-mono">
+              HTML
+            </div>
           </div>
         ) : (
           <EditorContent editor={editor} />

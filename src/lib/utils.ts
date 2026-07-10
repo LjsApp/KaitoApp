@@ -5,7 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDate(dateString: string | undefined | null, options?: Intl.DateTimeFormatOptions) {
+export function formatDate(
+  dateString: string | undefined | null,
+  options?: Intl.DateTimeFormatOptions,
+) {
   if (!dateString) return "";
   const d = new Date(dateString);
   if (isNaN(d.getTime())) return "";

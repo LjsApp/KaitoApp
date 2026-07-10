@@ -24,7 +24,10 @@ function KategoriPage() {
   if (cats.length > 0 && !category) {
     return (
       <div className="py-20 text-center">
-        Kategori tidak ditemukan. <Link to="/produk" className="text-primary underline">Lihat semua</Link>
+        Kategori tidak ditemukan.{" "}
+        <Link to="/produk" className="text-primary underline">
+          Lihat semua
+        </Link>
       </div>
     );
   }
@@ -34,17 +37,18 @@ function KategoriPage() {
       <PageHero
         title={category?.name ?? "Kategori"}
         subtitle={category?.description ?? ""}
-        breadcrumb={[
-          { label: "Produk", to: "/produk" },
-          { label: category?.name ?? "" },
-        ]}
+        breadcrumb={[{ label: "Produk", to: "/produk" }, { label: category?.name ?? "" }]}
       />
       <section className="mx-auto max-w-7xl container-px py-12">
         {products.length === 0 ? (
-          <div className="py-16 text-center text-muted-foreground">Belum ada produk di kategori ini.</div>
+          <div className="py-16 text-center text-muted-foreground">
+            Belum ada produk di kategori ini.
+          </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {products.map((p) => (<ProductCard key={p.id} product={p} />))}
+            {products.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
           </div>
         )}
       </section>

@@ -34,7 +34,8 @@ function ProdukIndex() {
 
   const list = useMemo(() => {
     let arr = products.filter((p) => {
-      const matchQ = !q || `${p.name} ${p.sku} ${p.tagline}`.toLowerCase().includes(q.toLowerCase());
+      const matchQ =
+        !q || `${p.name} ${p.sku} ${p.tagline}`.toLowerCase().includes(q.toLowerCase());
       const matchCat = cat === "all" || p.category?.slug === cat;
       return matchQ && matchCat;
     });
@@ -47,10 +48,15 @@ function ProdukIndex() {
     <>
       <div className="border-b border-border bg-card/60 backdrop-blur">
         <div className="mx-auto max-w-7xl container-px py-6 md:py-8">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-1.5">Katalog Lengkap</div>
-          <h1 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight">Produk Kaito Hiro</h1>
+          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-1.5">
+            Katalog Lengkap
+          </div>
+          <h1 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight">
+            Produk Kaito Hiro
+          </h1>
           <p className="mt-2 text-muted-foreground text-sm md:text-base max-w-2xl">
-            Dari pompa jet rumah tangga hingga pompa industri kapasitas besar — temukan solusi yang tepat.
+            Dari pompa jet rumah tangga hingga pompa industri kapasitas besar — temukan solusi yang
+            tepat.
           </p>
         </div>
       </div>
@@ -70,7 +76,7 @@ function ProdukIndex() {
               <ChevronDown
                 className={cn(
                   "h-4 w-4 text-muted-foreground transition-transform duration-300",
-                  filterOpen && "rotate-180"
+                  filterOpen && "rotate-180",
                 )}
               />
             </button>
@@ -79,7 +85,7 @@ function ProdukIndex() {
             <div
               className={cn(
                 "grid transition-all duration-300 ease-in-out md:!grid-rows-[1fr] md:!opacity-100",
-                filterOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                filterOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
               )}
             >
               <div className="overflow-hidden">
@@ -87,20 +93,31 @@ function ProdukIndex() {
                   <div className="flex flex-col sm:flex-row gap-2.5 mb-3 md:mt-0">
                     <div className="relative flex-1">
                       <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("common.search")}
-                        className="w-full h-10 bg-muted border border-border rounded-xl pl-10 pr-4 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all" />
+                      <input
+                        value={q}
+                        onChange={(e) => setQ(e.target.value)}
+                        placeholder={t("common.search")}
+                        className="w-full h-10 bg-muted border border-border rounded-xl pl-10 pr-4 text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                      />
                     </div>
-                    <select value={sort} onChange={(e) => setSort(e.target.value)}
-                      className="h-10 rounded-xl border border-border bg-muted px-3 text-sm outline-none focus:ring-2 focus:ring-primary/30">
+                    <select
+                      value={sort}
+                      onChange={(e) => setSort(e.target.value)}
+                      className="h-10 rounded-xl border border-border bg-muted px-3 text-sm outline-none focus:ring-2 focus:ring-primary/30"
+                    >
                       <option value="newest">Terbaru</option>
                       <option value="featured">Unggulan</option>
                       <option value="name">Nama A-Z</option>
                     </select>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <Pill active={cat === "all"} onClick={() => setCat("all")}>Semua</Pill>
+                    <Pill active={cat === "all"} onClick={() => setCat("all")}>
+                      Semua
+                    </Pill>
                     {categories.map((c) => (
-                      <Pill key={c.slug} active={cat === c.slug} onClick={() => setCat(c.slug)}>{c.name}</Pill>
+                      <Pill key={c.slug} active={cat === c.slug} onClick={() => setCat(c.slug)}>
+                        {c.name}
+                      </Pill>
                     ))}
                   </div>
                 </div>
@@ -123,7 +140,16 @@ function ProdukIndex() {
           <div className="mt-8 text-center py-20 rounded-2xl border border-dashed border-border">
             <Package className="h-12 w-12 mx-auto text-muted-foreground/50 mb-4" />
             <p className="text-muted-foreground font-medium">Belum ada produk.</p>
-            <Button variant="outline" className="mt-6" onClick={() => { setQ(""); setCat("all"); }}>Reset Filter</Button>
+            <Button
+              variant="outline"
+              className="mt-6"
+              onClick={() => {
+                setQ("");
+                setCat("all");
+              }}
+            >
+              Reset Filter
+            </Button>
           </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -139,10 +165,20 @@ function ProdukIndex() {
   );
 }
 
-function Pill({ children, active, onClick }: { children: React.ReactNode; active?: boolean; onClick?: () => void }) {
+function Pill({
+  children,
+  active,
+  onClick,
+}: {
+  children: React.ReactNode;
+  active?: boolean;
+  onClick?: () => void;
+}) {
   return (
-    <button onClick={onClick}
-      className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${active ? "bg-primary text-primary-foreground shadow-sm" : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground"}`}>
+    <button
+      onClick={onClick}
+      className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${active ? "bg-primary text-primary-foreground shadow-sm" : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground"}`}
+    >
       {children}
     </button>
   );

@@ -11,7 +11,13 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { qkProducts, qkArticles } from "@/lib/queries";
 
-export function GlobalSearch({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
+export function GlobalSearch({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const navigate = useNavigate();
   const { data: products = [] } = useQuery(qkProducts());
   const { data: articles = [] } = useQuery(qkArticles());
@@ -26,7 +32,7 @@ export function GlobalSearch({ open, onOpenChange }: { open: boolean; onOpenChan
       <CommandInput placeholder="Cari pompa, artikel, atau panduan..." />
       <CommandList>
         <CommandEmpty>Tidak ada hasil ditemukan.</CommandEmpty>
-        
+
         <CommandGroup heading="Produk">
           {products.map((product) => (
             <CommandItem

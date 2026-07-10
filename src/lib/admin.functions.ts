@@ -39,6 +39,7 @@ export const setupAdmin = createServerFn({ method: "POST" })
 export const updateAdminCredentials = createServerFn({ method: "POST" })
   .validator((d: { currentPassword: string; newUsername: string; newPassword: string }) => d)
   .handler(async ({ data }) => {
-    const { updateAdminCredentials: update } = await import("./admin-session.server");
+    const { updateAdminCredentials: update, requireAdmin } = await import("./admin-session.server");
+    await requireAdmin();
     return await update(data.currentPassword, data.newUsername, data.newPassword);
   });

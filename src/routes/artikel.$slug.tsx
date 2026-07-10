@@ -7,48 +7,23 @@ import { motion, useScroll } from "framer-motion";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { CardSkeleton } from "@/components/ui/skeleton";
 import { formatDate } from "@/lib/utils";
+import DOMPurify from "isomorphic-dompurify";
 
 /**
  * Sanitasi HTML artikel sebelum dirender — mencegah stored XSS.
- * Menghapus: <script>, <iframe>, <object>, <embed>, atribut on*, href=javascript:
- * Fallback ke raw HTML jika DOMParser tidak tersedia (SSR) atau parsing gagal.
+ * Menggunakan isomorphic-dompurify agar aman di SSR dan Client.
  */
 function sanitizeHtml(html: string): string {
   if (!html) return "";
-  // SSR: window/DOMParser tidak tersedia — kembalikan html langsung
-  // (konten dari DB sudah diinput via admin yang terautentikasi)
-  if (typeof window === "undefined" || typeof DOMParser === "undefined") return html;
-  try {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    // Hapus tag berbahaya
-    doc.querySelectorAll("script, iframe, object, embed, form, meta").forEach((el) => el.remove());
-    // Hapus atribut berbahaya di semua elemen
-    doc.querySelectorAll("*").forEach((el) => {
-      for (const attr of Array.from(el.attributes)) {
-        if (
-          attr.name.toLowerCase().startsWith("on") ||
-          (attr.name.toLowerCase() === "href" && attr.value.trim().toLowerCase().startsWith("javascript:")) ||
-          (attr.name.toLowerCase() === "src" && attr.value.trim().toLowerCase().startsWith("javascript:")) ||
-          attr.name.toLowerCase() === "srcdoc"
-        ) {
-          el.removeAttribute(attr.name);
-        }
-      }
-    });
-    return doc.body.innerHTML || html;
-  } catch {
-    // Jika parsing gagal, kembalikan html asli (bukan string kosong)
-    return html;
-  }
+  return DOMPurify.sanitize(html, {
+    ADD_TAGS: ["iframe"],
+    ADD_ATTR: ["allow", "allowfullscreen", "frameborder", "scrolling"],
+  });
 }
-
 
 export const Route = createFileRoute("/artikel/$slug")({
   head: ({ params }) => ({
-    meta: [
-      { title: `Artikel — KTH` },
-      { property: "og:url", content: `/artikel/${params.slug}` },
-    ],
+    meta: [{ title: `Artikel — KTH` }, { property: "og:url", content: `/artikel/${params.slug}` }],
     links: [{ rel: "canonical", href: `/artikel/${params.slug}` }],
   }),
   component: ArtikelDetail,
@@ -87,7 +62,10 @@ function ArtikelDetail() {
   if (!article) {
     return (
       <div className="py-20 text-center">
-        Artikel tidak ditemukan. <Link to="/artikel" className="text-primary underline">Kembali</Link>
+        Artikel tidak ditemukan.{" "}
+        <Link to="/artikel" className="text-primary underline">
+          Kembali
+        </Link>
       </div>
     );
   }
@@ -95,13 +73,17 @@ function ArtikelDetail() {
   return (
     <>
       {/* Indikator progres baca — tepat di bawah navbar */}
-      <motion.div 
+      <motion.div
         className="fixed top-[100px] lg:top-[116px] left-0 right-0 h-1 bg-primary z-[100] origin-left"
-        style={{ scaleX: scrollYProgress }} 
+        style={{ scaleX: scrollYProgress }}
       />
       <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
         {article.cover_url ? (
-          <LazyImage src={article.cover_url} alt={article.title} className="w-full h-full object-cover" />
+          <LazyImage
+            src={article.cover_url}
+            alt={article.title}
+            className="w-full h-full object-cover"
+          />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary to-accent-orange" />
         )}
@@ -110,7 +92,10 @@ function ArtikelDetail() {
         {/* Layer 2: gradient bawah lebih kuat untuk area judul & meta */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 mx-auto max-w-3xl container-px pb-10 md:pb-16">
-          <Link to="/artikel" className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium mb-6 transition-colors">
+          <Link
+            to="/artikel"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium mb-6 transition-colors"
+          >
             <ArrowLeft className="h-4 w-4" /> Kembali ke Artikel
           </Link>
           <div className="flex items-center gap-3 mb-5">
@@ -118,9 +103,14 @@ function ArtikelDetail() {
               {article.category}
             </span>
           </div>
-          <h1 className="font-display font-black text-3xl md:text-5xl text-white leading-tight">{article.title}</h1>
+          <h1 className="font-display font-black text-3xl md:text-5xl text-white leading-tight">
+            {article.title}
+          </h1>
           <div className="flex flex-wrap items-center gap-5 text-white/75 text-sm mt-6 font-medium">
-            <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />{formatDate(article.published_at, { year: "numeric", month: "long", day: "numeric" })}</span>
+            <span className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              {formatDate(article.published_at, { year: "numeric", month: "long", day: "numeric" })}
+            </span>
           </div>
         </div>
       </div>
@@ -138,7 +128,9 @@ function ArtikelDetail() {
           />
           <div className="mt-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent-orange/10 border border-primary/20 p-8 text-center">
             <h3 className="font-display font-bold text-xl mb-2">Butuh Pompa yang Tepat?</h3>
-            <p className="text-muted-foreground mb-6">Konsultasikan kebutuhan Anda langsung dengan tim ahli KTH secara gratis.</p>
+            <p className="text-muted-foreground mb-6">
+              Konsultasikan kebutuhan Anda langsung dengan tim ahli KTH secara gratis.
+            </p>
             <Link to="/kontak">
               <button className="bg-gradient-to-r from-primary to-primary-glow text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition-opacity">
                 Hubungi Kami Sekarang
@@ -153,16 +145,31 @@ function ArtikelDetail() {
           <h2 className="font-display font-bold text-2xl mb-8">Artikel Terkait</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {related.map((a) => (
-              <Link key={a.slug} to="/artikel/$slug" params={{ slug: a.slug }} className="group flex flex-col">
+              <Link
+                key={a.slug}
+                to="/artikel/$slug"
+                params={{ slug: a.slug }}
+                className="group flex flex-col"
+              >
                 <div className="aspect-[16/10] w-full rounded-2xl overflow-hidden relative mb-5">
                   {a.cover_url ? (
-                    <LazyImage src={a.cover_url} alt={a.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  ) : (<div className="w-full h-full bg-muted" />)}
+                    <LazyImage
+                      src={a.cover_url}
+                      alt={a.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted" />
+                  )}
                   <div className="absolute top-4 left-4">
-                    <span className="rounded-full bg-background/90 backdrop-blur text-foreground px-3 py-1 text-xs font-bold">{a.category}</span>
+                    <span className="rounded-full bg-background/90 backdrop-blur text-foreground px-3 py-1 text-xs font-bold">
+                      {a.category}
+                    </span>
                   </div>
                 </div>
-                <h3 className="font-display font-bold text-lg group-hover:text-primary transition-colors line-clamp-2">{a.title}</h3>
+                <h3 className="font-display font-bold text-lg group-hover:text-primary transition-colors line-clamp-2">
+                  {a.title}
+                </h3>
                 <div className="mt-3 inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Baca Selengkapnya <ArrowRight className="h-4 w-4" />
                 </div>

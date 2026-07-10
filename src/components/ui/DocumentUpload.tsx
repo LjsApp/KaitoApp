@@ -11,12 +11,18 @@ interface DocumentUploadProps {
   className?: string;
 }
 
-export function DocumentUpload({ value, onChange, folder = "documents", label = "Upload Dokumen", className }: DocumentUploadProps) {
+export function DocumentUpload({
+  value,
+  onChange,
+  folder = "documents",
+  label = "Upload Dokumen",
+  className,
+}: DocumentUploadProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
 
   const handleFile = async (file: File) => {
-    const ext = file.name.split('.').pop()?.toLowerCase() || '';
+    const ext = file.name.split(".").pop()?.toLowerCase() || "";
     const allowed = ["pdf", "doc", "docx", "xls", "xlsx", "zip", "rar"];
     if (!allowed.includes(ext)) {
       toast.error(`Tipe file .${ext} tidak diizinkan`);
@@ -30,15 +36,21 @@ export function DocumentUpload({ value, onChange, folder = "documents", label = 
     setLoading(true);
     try {
       const base64 = await fileToBase64(file);
-      const result = await uploadDocument({ data: { fileName: file.name, contentType: file.type || "application/octet-stream", base64, folder } });
-      
+      const result = await uploadDocument({
+        data: {
+          fileName: file.name,
+          contentType: file.type || "application/octet-stream",
+          base64,
+          folder,
+        },
+      });
+
       // Hitung ukuran file untuk ditampilkan
       const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
-      const sizeString = file.size < 1024 * 1024 
-        ? Math.round(file.size / 1024) + " KB" 
-        : sizeMB + " MB";
-        
-      // Kembalikan URL dan juga fire custom event/callback jika perlu, 
+      const sizeString =
+        file.size < 1024 * 1024 ? Math.round(file.size / 1024) + " KB" : sizeMB + " MB";
+
+      // Kembalikan URL dan juga fire custom event/callback jika perlu,
       // tapi kita akan pakai URL saja, dan biarkan form mendeteksi ukuran/tipe.
       onChange(result.url + "|||" + sizeString); // Hack sederhana untuk return size
     } catch (e) {
@@ -68,7 +80,12 @@ export function DocumentUpload({ value, onChange, folder = "documents", label = 
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-sm font-medium truncate">Dokumen Terunggah</div>
-            <a href={docUrl} target="_blank" rel="noreferrer" className="text-xs text-primary hover:underline">
+            <a
+              href={docUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-primary hover:underline"
+            >
               Lihat Dokumen
             </a>
           </div>
@@ -93,7 +110,9 @@ export function DocumentUpload({ value, onChange, folder = "documents", label = 
           ) : (
             <>
               <Upload className="h-6 w-6 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground font-medium">Upload File (PDF/DOC/ZIP)</span>
+              <span className="text-sm text-muted-foreground font-medium">
+                Upload File (PDF/DOC/ZIP)
+              </span>
               <span className="text-xs text-muted-foreground">Maks 2 MB</span>
             </>
           )}
@@ -104,7 +123,11 @@ export function DocumentUpload({ value, onChange, folder = "documents", label = 
         type="file"
         accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar"
         className="hidden"
-        onChange={(e) => { const f = e.target.files?.[0]; if (f) handleFile(f); e.target.value = ""; }}
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) handleFile(f);
+          e.target.value = "";
+        }}
       />
     </div>
   );
