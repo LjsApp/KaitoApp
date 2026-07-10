@@ -174,11 +174,11 @@ function HomePage() {
       <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl shadow-soft">
-            <img 
-              src={kthParts} 
-              alt="Bagian-bagian Pompa KTH KAITOHIRO" 
-              loading="lazy" 
-              className="w-full h-auto object-cover" 
+            <img
+              src={kthParts}
+              alt="Bagian-bagian Pompa KTH KAITOHIRO"
+              loading="lazy"
+              className="w-full h-auto object-cover"
             />
           </div>
         </Reveal>
@@ -212,10 +212,9 @@ function HomePage() {
       {/* ── CATEGORIES ── */}
       <section className="bg-card border-y border-border py-16 lg:py-20">
         <div className="mx-auto max-w-7xl container-px">
-          <Reveal className="text-center max-w-2xl mx-auto mb-14">
+          <Reveal className="mb-14">
             <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Lini Produk</div>
             <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Temukan Pompa yang Tepat</h2>
-            <p className="mt-4 text-muted-foreground">Dari pompa rumah tangga hingga industri — kami punya solusinya.</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((c, i) => (
