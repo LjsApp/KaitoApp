@@ -15,8 +15,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { data: articles }
         ] = await Promise.all([
           supabaseAdmin.from("categories").select("slug"),
-          supabaseAdmin.from("products").select("slug").eq("status", "published"),
-          supabaseAdmin.from("articles").select("slug").eq("status", "published")
+          supabaseAdmin.from("products").select("slug"),
+          supabaseAdmin.from("articles").select("slug")
         ]);
 
         const entries: { path: string; changefreq?: string; priority?: string }[] = [

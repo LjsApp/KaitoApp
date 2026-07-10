@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Download, MessageCircle, Share2, ShieldCheck, BadgeCheck, Clock, Check, ShoppingBag, Store } from "lucide-react";
+import { Download, MessageCircle, Share2, ShieldCheck, BadgeCheck, Clock, Check, ShoppingBag, Store, ChevronDown, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { qkProduct, qkProductsByCategory } from "@/lib/queries";
 import { useCompany } from "@/hooks/use-company";
+import { FAQS } from "@/data/content";
 
 export const Route = createFileRoute("/produk/$slug")({
   head: ({ params }) => ({
@@ -24,6 +25,7 @@ function ProductDetail() {
   const { data: product, isLoading } = useQuery(qkProduct(slug));
   const company = useCompany();
   const [active, setActive] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { data: related = [] } = useQuery({
     ...qkProductsByCategory(product?.category?.slug ?? ""),
     enabled: !!product?.category?.slug,
@@ -157,6 +159,58 @@ function ProductDetail() {
                 </Button>
               </a>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Q&A / FAQ ── */}
+      <section className="mx-auto max-w-7xl container-px pb-16">
+        <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-soft">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-10 w-10 rounded-xl bg-primary/10 grid place-items-center shrink-0">
+              <HelpCircle className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-0.5">Support</div>
+              <h3 className="font-display font-bold text-xl md:text-2xl">Pertanyaan Umum</h3>
+            </div>
+          </div>
+          <div className="divide-y divide-border">
+            {FAQS.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div key={i} className="py-1">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 py-4 text-left group"
+                    aria-expanded={isOpen}
+                  >
+                    <span className={`font-semibold text-sm md:text-base transition-colors ${isOpen ? "text-primary" : "group-hover:text-primary"}`}>
+                      {faq.q}
+                    </span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 ${isOpen ? "rotate-180 text-primary" : "group-hover:text-primary"}`}
+                    />
+                  </button>
+                  <div
+                    className="overflow-hidden transition-all duration-300 ease-in-out"
+                    style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0 }}
+                  >
+                    <p className="pb-5 pr-8 text-sm text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center gap-3 justify-between">
+            <p className="text-sm text-muted-foreground">Tidak menemukan jawaban yang Anda cari?</p>
+            <a href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent("Halo KTH, saya punya pertanyaan tentang produk Anda.")}`} target="_blank" rel="noopener">
+              <Button size="sm" className="bg-success text-white hover:opacity-90 shrink-0">
+                <MessageCircle className="mr-2 h-3.5 w-3.5" /> Tanya via WhatsApp
+              </Button>
+            </a>
           </div>
         </div>
       </section>
