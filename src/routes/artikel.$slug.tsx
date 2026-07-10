@@ -60,16 +60,12 @@ function ArtikelDetail() {
   const { data: all = [] } = useQuery(qkArticles());
   const related = all.filter((a) => a.slug !== slug).slice(0, 3);
 
+  // PENTING: useScroll harus dipanggil di sini (sebelum return kondisional apapun)
+  // agar tidak melanggar Rules of Hooks React
+  const { scrollYProgress } = useScroll();
+
   // Sanitasi konten HTML untuk mencegah XSS
   const safeContent = useMemo(() => sanitizeHtml(article?.content || ""), [article?.content]);
-  
-  // Debugging log (akan muncul di console browser atau terminal Vite)
-  console.log("DEBUG ARTIKEL:", { 
-    slug, 
-    hasArticle: !!article, 
-    contentLength: article?.content?.length,
-    safeContentLength: safeContent.length
-  });
 
   if (isLoading) {
     return (
@@ -95,8 +91,6 @@ function ArtikelDetail() {
       </div>
     );
   }
-
-  const { scrollYProgress } = useScroll();
 
   return (
     <>
