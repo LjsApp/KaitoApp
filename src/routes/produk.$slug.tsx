@@ -230,10 +230,10 @@ function ProductDetail() {
             {FAQS.map((faq, i) => {
               const isOpen = openFaq === i;
               return (
-                <div key={i} className="py-1">
+                <div key={i} className="py-0.5">
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 py-4 text-left group"
+                    className="w-full flex items-center justify-between gap-4 py-3 text-left group"
                     aria-expanded={isOpen}
                   >
                     <span
@@ -249,7 +249,7 @@ function ProductDetail() {
                     className="overflow-hidden transition-all duration-300 ease-in-out"
                     style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0 }}
                   >
-                    <p className="pb-5 pr-8 text-sm text-muted-foreground leading-relaxed">
+                    <p className="pb-3 pr-8 text-sm text-muted-foreground leading-relaxed">
                       {faq.a}
                     </p>
                   </div>
