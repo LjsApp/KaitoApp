@@ -94,8 +94,9 @@ function ArtikelDetail() {
 
   return (
     <>
+      {/* Indikator progres baca — tepat di bawah navbar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[100] origin-left"
+        className="fixed top-[100px] lg:top-[116px] left-0 right-0 h-1 bg-primary z-[100] origin-left"
         style={{ scaleX: scrollYProgress }} 
       />
       <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
