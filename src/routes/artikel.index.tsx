@@ -79,7 +79,10 @@ function ArtikelIndex() {
                   {featured.cover_url ? (
                     <LazyImage src={featured.cover_url} alt={featured.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   ) : (<div className="w-full h-full bg-muted" />)}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  {/* Overlay tipis merata */}
+                  <div className="absolute inset-0 bg-black/20" />
+                  {/* Gradient bawah untuk area teks */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <span className="rounded-full bg-accent-orange text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">{featured.category}</span>
                     <h2 className="font-display font-black text-3xl md:text-4xl text-white mt-4 leading-tight line-clamp-2">{featured.title}</h2>
@@ -121,6 +124,8 @@ function ArtikelIndex() {
                     <Link to="/artikel/$slug" params={{ slug: a.slug }} className="group flex flex-col h-full">
                       <div className="aspect-[16/10] w-full rounded-2xl overflow-hidden relative shadow-sm mb-5">
                         {a.cover_url ? <LazyImage src={a.cover_url} alt={a.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /> : <div className="w-full h-full bg-muted" />}
+                        {/* Overlay tipis agar badge kategori lebih kontras */}
+                        <div className="absolute inset-0 bg-black/15 rounded-2xl" />
                         <div className="absolute top-4 left-4">
                           <span className="rounded-full bg-background/90 backdrop-blur text-foreground px-3 py-1 text-xs font-bold">{a.category}</span>
                         </div>

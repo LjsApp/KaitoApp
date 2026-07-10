@@ -368,6 +368,8 @@ function HomePage() {
                   <div className="absolute top-3 left-3">
                     <span className="rounded-full bg-background/90 backdrop-blur text-foreground px-3 py-1 text-xs font-bold">{a.category}</span>
                   </div>
+                  {/* Overlay tipis — sedikit lebih gelap saat hover */}
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">

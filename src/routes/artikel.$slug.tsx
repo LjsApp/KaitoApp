@@ -105,7 +105,10 @@ function ArtikelDetail() {
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary to-accent-orange" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+        {/* Layer 1: overlay tipis merata agar gambar terang tetap bisa ditimpa teks */}
+        <div className="absolute inset-0 bg-black/25" />
+        {/* Layer 2: gradient bawah lebih kuat untuk area judul & meta */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 mx-auto max-w-3xl container-px pb-10 md:pb-16">
           <Link to="/artikel" className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium mb-6 transition-colors">
             <ArrowLeft className="h-4 w-4" /> Kembali ke Artikel
