@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { Calendar, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Search } from "lucide-react";
 import { qkArticle, qkArticles } from "@/lib/queries";
 import { motion, useScroll } from "framer-motion";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { CardSkeleton } from "@/components/ui/skeleton";
+import { formatDate } from "@/lib/utils";
 
 /**
  * Sanitasi HTML artikel sebelum dirender — mencegah stored XSS.
@@ -121,7 +122,7 @@ function ArtikelDetail() {
           </div>
           <h1 className="font-display font-black text-3xl md:text-5xl text-white leading-tight">{article.title}</h1>
           <div className="flex flex-wrap items-center gap-5 text-white/75 text-sm mt-6 font-medium">
-            <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />{new Date(article.published_at).toLocaleDateString("id-ID", { year: "numeric", month: "long", day: "numeric" })}</span>
+            <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />{formatDate(article.published_at, { year: "numeric", month: "long", day: "numeric" })}</span>
           </div>
         </div>
       </div>

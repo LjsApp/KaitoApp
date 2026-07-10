@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Search, Calendar, ArrowRight } from "lucide-react";
 import { qkArticles } from "@/lib/queries";
+import { formatDate } from "@/lib/utils";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Reveal } from "@/components/site/Reveal";
 import { CardSkeleton } from "@/components/ui/skeleton";
@@ -97,8 +98,9 @@ function ArtikelIndex() {
                         <span className="text-accent-orange font-bold text-[10px] mb-2 uppercase tracking-widest">{a.category}</span>
                         <h3 className="font-display font-bold text-sm md:text-base line-clamp-2 group-hover:text-primary transition-colors leading-snug">{a.title}</h3>
                         <div className="text-muted-foreground text-xs mt-3 flex items-center gap-1.5">
-                          <Calendar className="w-3 h-3" />
-                          {new Date(a.published_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })}
+                          <span className="flex items-center gap-1.5 font-medium">
+                            {formatDate(a.published_at, { day: "numeric", month: "short", year: "numeric" })}
+                          </span>
                         </div>
                       </div>
                     </Link>
@@ -123,8 +125,8 @@ function ArtikelIndex() {
                           <span className="rounded-full bg-background/90 backdrop-blur text-foreground px-3 py-1 text-xs font-bold">{a.category}</span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                        <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {new Date(a.published_at).toLocaleDateString("id-ID")}</span>
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                        <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {formatDate(a.published_at)}</span>
                       </div>
                       <h4 className="font-display font-bold text-xl group-hover:text-primary transition-colors line-clamp-2 mb-3">{a.title}</h4>
                       <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-1">{a.excerpt}</p>

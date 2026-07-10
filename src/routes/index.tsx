@@ -15,6 +15,7 @@ import { STATS, WHY, TESTIMONIALS } from "@/data/content";
 import { ProductCard } from "@/components/site/ProductCard";
 import { Counter } from "@/components/site/Counter";
 import { Reveal } from "@/components/site/Reveal";
+import { formatDate } from "@/lib/utils";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap, Volume2, ShieldCheck, Cpu, Wrench, BadgeCheck, Award, Anchor,
@@ -370,7 +371,7 @@ function HomePage() {
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {new Date(a.published_at).toLocaleDateString("id-ID", { day: "numeric", month: "short" })}</span>
+                    <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" /> {formatDate(a.published_at, { day: "numeric", month: "short" })}</span>
                   </div>
                   <h3 className="font-display font-bold text-base md:text-lg group-hover:text-primary line-clamp-2 transition-colors">{a.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{a.excerpt}</p>
