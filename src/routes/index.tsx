@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useRef, useCallback, useState as useSlideState } from "react";
 import {
   ArrowRight, ShieldCheck, Zap, Volume2, Cpu, Wrench, BadgeCheck, Award, Anchor,
   Star, MessageCircle, Phone, Quote, Sparkles, Clock, Calendar, Maximize
@@ -34,6 +34,154 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
+
+function TestimonialCarousel() {
+  const [active, setActive] = useSlideState(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const total = TESTIMONIALS.length;
+
+  const goTo = useCallback((idx: number) => {
+    setActive((idx + total) % total);
+  }, [total]);
+
+  // Auto-play: advance every 4 seconds
+  React.useEffect(() => {
+    timerRef.current = setTimeout(() => goTo(active + 1), 4000);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [active, goTo]);
+
+  const t = TESTIMONIALS[active];
+  const prev = TESTIMONIALS[(active - 1 + total) % total];
+  const next = TESTIMONIALS[(active + 1) % total];
+
+  return (
+    <section className="py-16 lg:py-20 bg-card border-y border-border overflow-hidden">
+      <div className="mx-auto max-w-7xl container-px">
+        {/* Header */}
+        <Reveal className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Testimoni</div>
+          <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Dipercaya Ribuan Pelanggan</h2>
+        </Reveal>
+
+        {/* Carousel */}
+        <div className="relative flex items-center gap-4">
+          {/* Prev button */}
+          <button
+            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active - 1); }}
+            className="shrink-0 hidden md:grid h-11 w-11 place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm z-10"
+            aria-label="Sebelumnya"
+          >
+            <ArrowRight className="h-4 w-4 rotate-180" />
+          </button>
+
+          {/* Cards */}
+          <div className="flex-1 grid md:grid-cols-3 gap-4 items-stretch">
+            {/* Side card - prev (desktop only) */}
+            <div className="hidden md:block opacity-40 scale-95 transition-all duration-500 pointer-events-none">
+              <div className="relative p-7 rounded-2xl border border-border bg-background h-full flex flex-col">
+                <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/8" />
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: prev.rating }).map((_, k) => (
+                    <Star key={k} className="h-4 w-4 fill-accent-orange text-accent-orange" />
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">"{prev.quote}"</p>
+                <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
+                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">{prev.name.charAt(0)}</div>
+                  <div>
+                    <div className="font-semibold text-sm">{prev.name}</div>
+                    <div className="text-xs text-muted-foreground">{prev.role}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Main active card */}
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="relative p-7 rounded-2xl border-2 border-primary/30 bg-background shadow-soft flex flex-col"
+            >
+              <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/15" />
+              <div className="flex gap-0.5 mb-4">
+                {Array.from({ length: t.rating }).map((_, k) => (
+                  <Star key={k} className="h-5 w-5 fill-accent-orange text-accent-orange" />
+                ))}
+              </div>
+              <p className="text-base leading-relaxed text-foreground/90 flex-1">"{t.quote}"</p>
+              <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
+                <div className="h-11 w-11 rounded-full bg-primary/15 grid place-items-center text-primary font-bold shrink-0 text-base">{t.name.charAt(0)}</div>
+                <div>
+                  <div className="font-semibold">{t.name}</div>
+                  <div className="text-sm text-muted-foreground">{t.role}</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Side card - next (desktop only) */}
+            <div className="hidden md:block opacity-40 scale-95 transition-all duration-500 pointer-events-none">
+              <div className="relative p-7 rounded-2xl border border-border bg-background h-full flex flex-col">
+                <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/8" />
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: next.rating }).map((_, k) => (
+                    <Star key={k} className="h-4 w-4 fill-accent-orange text-accent-orange" />
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed text-foreground/80 flex-1 line-clamp-3">"{next.quote}"</p>
+                <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
+                  <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">{next.name.charAt(0)}</div>
+                  <div>
+                    <div className="font-semibold text-sm">{next.name}</div>
+                    <div className="text-xs text-muted-foreground">{next.role}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Next button */}
+          <button
+            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active + 1); }}
+            className="shrink-0 hidden md:grid h-11 w-11 place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm z-10"
+            aria-label="Berikutnya"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Dots + mobile buttons */}
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <button
+            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active - 1); }}
+            className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white transition-all"
+            aria-label="Sebelumnya"
+          >
+            <ArrowRight className="h-3.5 w-3.5 rotate-180" />
+          </button>
+          <div className="flex items-center gap-2">
+            {TESTIMONIALS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(i); }}
+                className={`rounded-full transition-all duration-300 ${i === active ? "w-6 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-border hover:bg-primary/40"}`}
+                aria-label={`Testimoni ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={() => { if (timerRef.current) clearTimeout(timerRef.current); goTo(active + 1); }}
+            className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-border bg-background hover:bg-primary hover:text-white transition-all"
+            aria-label="Berikutnya"
+          >
+            <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function HomePage() {
   const { t, i18n } = useTranslation();
@@ -290,39 +438,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className="py-16 lg:py-20 bg-card border-y border-border">
-        <div className="mx-auto max-w-7xl container-px">
-          <Reveal className="text-center max-w-2xl mx-auto mb-14">
-            <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Testimoni</div>
-            <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Dipercaya Ribuan Pelanggan</h2>
-          </Reveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.slice(0, 3).map((t, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <div className="relative p-7 rounded-2xl border border-border bg-background hover:shadow-soft transition-shadow h-full flex flex-col">
-                  <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/8" />
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: t.rating }).map((_, k) => (
-                      <Star key={k} className="h-4 w-4 fill-accent-orange text-accent-orange" />
-                    ))}
-                  </div>
-                  <p className="text-sm leading-relaxed text-foreground/80 flex-1">"{t.quote}"</p>
-                  <div className="mt-6 pt-5 border-t border-border/60 flex items-center gap-3">
-                    <div className="h-9 w-9 rounded-full bg-primary/10 grid place-items-center text-primary font-bold text-sm shrink-0">
-                      {t.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm">{t.name}</div>
-                      <div className="text-xs text-muted-foreground">{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── TESTIMONIALS CAROUSEL ── */}
+      <TestimonialCarousel />
 
       {/* ── ARTICLES ── */}
       <section className="mx-auto max-w-7xl container-px py-16 lg:py-20">
