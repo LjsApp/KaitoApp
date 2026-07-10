@@ -170,6 +170,20 @@ function HomePage() {
         </div>
       </section>
 
+      {/* ── INSIDE KTH FEATURE ── */}
+      <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl shadow-soft">
+            <img 
+              src={kthParts} 
+              alt="Bagian-bagian Pompa KTH KAITOHIRO" 
+              loading="lazy" 
+              className="w-full h-auto object-cover" 
+            />
+          </div>
+        </Reveal>
+      </section>
+
       {/* ── FEATURED PRODUCTS ── */}
       <section className="mx-auto max-w-7xl container-px py-12 lg:py-16">
         <Reveal className="flex items-end justify-between gap-4 mb-12">
@@ -193,20 +207,6 @@ function HomePage() {
             <Button variant="outline" className="gap-2">Lihat Semua Produk <ArrowRight className="h-4 w-4" /></Button>
           </Link>
         </div>
-      </section>
-
-      {/* ── INSIDE KTH FEATURE ── */}
-      <section className="mx-auto max-w-7xl container-px pb-24">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-3xl shadow-soft">
-            <img 
-              src={kthParts} 
-              alt="Bagian-bagian Pompa KTH KAITOHIRO" 
-              loading="lazy" 
-              className="w-full h-auto object-cover" 
-            />
-          </div>
-        </Reveal>
       </section>
 
       {/* ── CATEGORIES ── */}
@@ -353,7 +353,7 @@ function HomePage() {
                     </div>
                   )}
                   <div className="absolute top-3 left-3">
-                    <span className="rounded-full bg-accent-orange text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">{a.category}</span>
+                    <span className="rounded-full bg-accent-orange text-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider">{a.category}</span>
                   </div>
                   {/* Overlay tipis — sedikit lebih gelap saat hover */}
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
