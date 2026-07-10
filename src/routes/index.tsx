@@ -246,11 +246,10 @@ function HomePage() {
 
       {/* ── WHY KTH ── */}
       <section className="mx-auto max-w-7xl container-px py-16 lg:py-20">
-        <Reveal className="text-center max-w-2xl mx-auto mb-14">
+        <Reveal className="mb-14">
           <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Kenapa KTH</div>
           <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">
-            Kualitas Premium,{" "}
-            <span className="text-gradient">Harga Tepat</span>
+            Kualitas Premium, <span className="text-gradient">Harga Tepat</span>
           </h2>
           <p className="mt-4 text-muted-foreground">Setiap pompa dirancang dengan komponen premium dan diuji ketat untuk performa jangka panjang.</p>
         </Reveal>
