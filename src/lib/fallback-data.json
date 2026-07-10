@@ -1,0 +1,270 @@
+{
+  "products": [
+    {
+      "id": "57ab3fc2-1a1a-4c06-8b6a-f5faf5f6b7e5",
+      "slug": "submersible-pump-pompa-celup",
+      "sku": "KTH 2 SD 1/32",
+      "name": "Submersible Pump / Pompa celup",
+      "category_id": "c757ebbf-b7d5-4c62-8aea-b8e76509cb66",
+      "tagline": "hemat listrik, berbahan stainless steel , bergaransi",
+      "description": "KH 2 SD 1/32 dirancang khusu agar mudah dirawat, dan berkinerja maksimal untuk menjamin kenyamanan serta kepastian suplai air bersih bagi keluarga anda",
+      "gallery": [
+        "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/sign/public-media/products/1480b479-ec3d-4e82-882e-502bf03a2870.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMGNhMTczNy0wZDMxLTQ1MGYtYjQ4MC1lMTg5YWUxMDcyMGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdWJsaWMtbWVkaWEvcHJvZHVjdHMvMTQ4MGI0NzktZWMzZC00ZTgyLTg4MmUtNTAyYmYwM2EyODcwLndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgyOTcxOTYzLCJleHAiOjIwOTgzMzE5NjN9._AwxGQnS8auWvbYqSeUB0h7Df3eQgAOYvyPG8btE3AA"
+      ],
+      "specs": [
+        {
+          "key": "voltase",
+          "value": "220-240V/50Hz"
+        },
+        {
+          "key": "hp",
+          "value": "0.33"
+        },
+        {
+          "key": "watt",
+          "value": "180"
+        },
+        {
+          "key": "suhu cairan",
+          "value": "max 40 derajat C"
+        },
+        {
+          "key": "toleransi kandungan pasir",
+          "value": "max 0.25%"
+        },
+        {
+          "key": "diameter sumur",
+          "value": "2\""
+        }
+      ],
+      "shopee_url": "https://shopee.com/kaito-hiro",
+      "tokopedia_url": "https://tokopedia.com/kaito-hiro",
+      "featured": true,
+      "created_at": "2026-07-02T06:01:15.893319+00:00",
+      "updated_at": "2026-07-02T06:04:30.205332+00:00",
+      "document_url": ""
+    },
+    {
+      "id": "fcfc936c-22b0-4346-8a57-610501b356a6",
+      "slug": "Submersible Pump / Pompa celup",
+      "sku": "KTH 2 SD 1/26",
+      "name": "Submersible Pump / Pompa celup",
+      "category_id": "c757ebbf-b7d5-4c62-8aea-b8e76509cb66",
+      "tagline": "hemat listrik, berbahan stainless steel , bergaransi",
+      "description": "KH 2 SD 1/26 dirancang khusu agar mudah dirawat, dan berkinerja maksimal untuk menjamin kenyamanan serta kepastian suplai air bersih bagi keluarga anda",
+      "gallery": [
+        "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/sign/public-media/products/74e003cb-906d-4f9c-98a7-904b0556daa7.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMGNhMTczNy0wZDMxLTQ1MGYtYjQ4MC1lMTg5YWUxMDcyMGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdWJsaWMtbWVkaWEvcHJvZHVjdHMvNzRlMDAzY2ItOTA2ZC00ZjljLTk4YTctOTA0YjA1NTZkYWE3LndlYnAiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgyOTY4MTU1LCJleHAiOjIwOTgzMjgxNTV9.tg3xPn_nbXM7lggiIhHahq6n41FWUwj4mpAJ9I6GHhs"
+      ],
+      "specs": [
+        {
+          "key": "voltase",
+          "value": "220-240V/ 50Hz"
+        },
+        {
+          "key": "hp",
+          "value": "0.25"
+        },
+        {
+          "key": "watt",
+          "value": "180"
+        },
+        {
+          "key": "suhu cairan",
+          "value": "40 derajat"
+        },
+        {
+          "key": "toleransi kandungan pasir",
+          "value": "max 0.25%"
+        },
+        {
+          "key": "diameter sumur",
+          "value": "min 2\""
+        }
+      ],
+      "shopee_url": "https://shopee.co.id/kaitohiro/jp125",
+      "tokopedia_url": "https://tokopedia.com/kaitohiro/jp125",
+      "featured": true,
+      "created_at": "2026-07-01T12:34:37.188314+00:00",
+      "updated_at": "2026-07-02T05:40:18.377463+00:00",
+      "document_url": "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/sign/public-media/products/documents/1728a461-f81b-462e-bd19-f9f54a129f7f.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMGNhMTczNy0wZDMxLTQ1MGYtYjQ4MC1lMTg5YWUxMDcyMGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdWJsaWMtbWVkaWEvcHJvZHVjdHMvZG9jdW1lbnRzLzE3MjhhNDYxLWY4MWItNDYyZS1iZDE5LWY5ZjU0YTEyOWY3Zi5wZGYiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgyOTYyMDY5LCJleHAiOjIwOTgzMjIwNjl9.SKEEHtpYMh0EBwoJ-QnGFk008wuKykE25TPbjfMLv8A"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c757ebbf-b7d5-4c62-8aea-b8e76509cb66",
+      "slug": "pompa-celup",
+      "name": "Pompa Celup",
+      "description": "Pompa submersible untuk sumur dalam",
+      "image_url": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80",
+      "sort_order": 1
+    },
+    {
+      "id": "8b51d8b2-29fc-48b4-82a9-7c15eabeb3c1",
+      "slug": "pompa-sumur-dangkal",
+      "name": "Pompa Sumur Dangkal",
+      "description": "Pompa air efisien untuk sumur dangkal",
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+      "sort_order": 2
+    },
+    {
+      "id": "2c5ab3d9-6c3e-4d69-bfa3-0f7f32997e20",
+      "slug": "jet-pump",
+      "name": "Jet Pump",
+      "description": "Jet pump bertenaga untuk sumur menengah",
+      "image_url": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
+      "sort_order": 3
+    }
+  ],
+  "articles": [
+    {
+      "id": "ad97ff6a-9504-4413-a29e-4748bebdbd4f",
+      "slug": "cara-memilih-pompa-air",
+      "title": "Cara Memilih Pompa Air yang Tepat untuk Rumah",
+      "excerpt": "Panduan lengkap memilih pompa air berdasarkan kedalaman sumur, kebutuhan air, dan jumlah penghuni.",
+      "category": "Panduan",
+      "cover_url": "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/sign/public-media/articles/8e7b6f55-00fb-4f57-8e46-ae944a359ff2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMGNhMTczNy0wZDMxLTQ1MGYtYjQ4MC1lMTg5YWUxMDcyMGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdWJsaWMtbWVkaWEvYXJ0aWNsZXMvOGU3YjZmNTUtMDBmYi00ZjU3LThlNDYtYWU5NDRhMzU5ZmYyLmpwZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODMwMzQ3NjksImV4cCI6MjA5ODM5NDc2OX0.Lb5VOFmFS7xQ7KWur7FzycMCJp91MxURuN3eG-1ZEX0",
+      "content": "<p>```html</p><h1>Cara Memilih Pompa Air yang Tepat untuk Rumah Berdasarkan Kedalaman Sumur dan Kebutuhan Air</h1><p>Pompa air merupakan salah satu perangkat penting yang menunjang kebutuhan air bersih di rumah. Memilih pompa air yang tepat tidak hanya memastikan pasokan air tetap lancar, tetapi juga membantu menghemat konsumsi listrik dan memperpanjang usia pakai pompa. Sebaliknya, penggunaan pompa yang tidak sesuai dengan kondisi sumur atau kebutuhan rumah tangga dapat menyebabkan kinerja yang kurang optimal, pompa cepat rusak, hingga pemborosan biaya listrik.</p><p>Agar tidak salah memilih, ada beberapa faktor penting yang perlu diperhatikan sebelum membeli pompa air. Berikut panduan lengkapnya.</p><h2>1. Kenali Kedalaman Sumur Anda</h2><p>Hal pertama yang harus diketahui sebelum membeli pompa air adalah kedalaman sumur. Setiap jenis pompa memiliki kemampuan hisap yang berbeda sehingga pemilihannya harus disesuaikan dengan lokasi sumber air.</p><h3>Pompa Sumur Dangkal</h3><p>Pompa sumur dangkal sangat cocok digunakan pada sumur dengan kedalaman kurang dari 9 meter. Jenis pompa ini paling banyak digunakan di rumah tinggal karena pemasangannya mudah, harga relatif terjangkau, serta biaya perawatannya rendah.</p><h3>Pompa Semi Jet</h3><p>Untuk sumur dengan kedalaman antara 9 hingga 20 meter, pompa semi jet merupakan pilihan yang lebih tepat. Pompa ini memiliki daya hisap yang lebih kuat sehingga mampu mengalirkan air secara stabil dari kedalaman menengah.</p><h3>Jet Pump dan Pompa Submersible</h3><p>Jika sumber air berada pada kedalaman lebih dari 20 meter, gunakan jet pump atau pompa submersible. Jet pump dirancang khusus untuk sumur dalam, sedangkan pompa submersible dipasang langsung di dalam sumur sehingga mampu bekerja lebih efisien dengan tekanan air yang stabil.</p><h2>2. Hitung Kebutuhan Debit Air Rumah</h2><p>Selain kedalaman sumur, kapasitas debit air juga harus diperhatikan. Debit air menunjukkan banyaknya air yang dapat dipompa setiap menit dan sangat menentukan kenyamanan penggunaan sehari-hari.</p><p>Rata-rata kebutuhan air setiap orang berkisar antara <strong>120–150 liter per hari</strong>. Dengan demikian, perkiraan kebutuhan air rumah tangga adalah sebagai berikut:</p><ul><li><p>2 orang: sekitar 240–300 liter per hari.</p></li><li><p>4 orang: sekitar 480–600 liter per hari.</p></li><li><p>6 orang: sekitar 720–900 liter per hari.</p></li></ul><p>Untuk keluarga yang terdiri dari empat orang, pompa dengan kapasitas debit sekitar <strong>20–30 liter per menit</strong> umumnya sudah cukup memenuhi kebutuhan mandi, mencuci, memasak, dan aktivitas rumah tangga lainnya.</p><p>Apabila rumah memiliki lebih dari satu kamar mandi, taman yang membutuhkan penyiraman rutin, atau tandon berkapasitas besar, sebaiknya pilih pompa dengan debit yang lebih tinggi agar pasokan air tetap lancar.</p><h2>3. Perhatikan Daya Listrik Rumah</h2><p>Setiap pompa air memiliki kebutuhan daya listrik yang berbeda. Pastikan daya listrik di rumah mampu mengoperasikan pompa tanpa menyebabkan MCB sering turun.</p><p>Daya Pompa Minimal Daya Listrik 125 Watt 450 VA 200 Watt 900 VA 250 Watt ke atas 1300 VA atau lebih</p><p>Selain memperhatikan daya pompa, perhitungkan pula penggunaan peralatan listrik lainnya agar kapasitas listrik rumah tetap aman saat semua perangkat digunakan secara bersamaan.</p><h2>4. Pilih Material Pompa yang Berkualitas</h2><p>Material pompa memengaruhi ketahanan dan umur pemakaian. Pompa berbahan stainless steel memiliki ketahanan terhadap karat yang lebih baik sehingga cocok untuk penggunaan jangka panjang. Sementara itu, pompa berbahan besi cor dikenal kuat, namun membutuhkan perawatan lebih agar tidak mudah mengalami korosi.</p><p>Dengan memilih material yang berkualitas, risiko kerusakan dapat diminimalkan dan biaya perawatan menjadi lebih hemat.</p><h2>5. Perhatikan Kualitas Air Sumur</h2><p>Jika air sumur mengandung pasir, lumpur, atau endapan, gunakan pompa yang dirancang untuk kondisi tersebut atau tambahkan filter agar komponen pompa tidak cepat aus.</p><p>Air yang bersih akan membantu menjaga performa pompa tetap optimal sekaligus memperpanjang masa pakainya.</p><h2>6. Pilih Merek dengan Layanan Purna Jual yang Baik</h2><p>Selain spesifikasi teknis, pastikan pompa berasal dari merek yang menyediakan garansi resmi, suku cadang yang mudah diperoleh, serta jaringan layanan servis yang luas. Hal ini akan memudahkan proses perawatan maupun perbaikan apabila suatu saat terjadi kerusakan.</p><h2>Tips Agar Pompa Air Lebih Awet</h2><ul><li><p>Lakukan pemeriksaan pompa secara berkala.</p></li><li><p>Bersihkan filter jika tersedia.</p></li><li><p>Periksa kebocoran pada instalasi pipa.</p></li><li><p>Hindari pompa bekerja tanpa air (dry running).</p></li><li><p>Pastikan instalasi listrik dalam kondisi baik.</p></li><li><p>Segera lakukan servis jika muncul suara atau getaran yang tidak normal.</p></li></ul><h2>Kesimpulan</h2><p>Memilih pompa air yang tepat harus mempertimbangkan kedalaman sumur, kebutuhan debit air, serta kapasitas daya listrik di rumah. Selain itu, kualitas material, kondisi air, dan layanan purna jual juga menjadi faktor penting yang akan menentukan kenyamanan penggunaan dalam jangka panjang.</p><p>Dengan memahami seluruh aspek tersebut, Anda dapat memilih pompa air yang sesuai dengan kebutuhan rumah tangga, bekerja lebih efisien, hemat energi, dan memiliki usia pakai yang lebih lama.</p><p> ```</p>",
+      "author": "Tim KTH",
+      "published_at": "2026-06-12T00:00:00+00:00",
+      "created_at": "2026-07-01T12:34:37.188314+00:00",
+      "updated_at": "2026-07-03T00:19:39.656422+00:00"
+    },
+    {
+      "id": "21bf1adf-1d34-4238-b1fe-de4dd14d9804",
+      "slug": "perawatan-pompa-air",
+      "title": "5 Tips Perawatan Pompa Air agar Awet 10 Tahun",
+      "excerpt": "Rutinitas sederhana untuk memperpanjang umur pompa air Anda.",
+      "category": "Tips",
+      "cover_url": "",
+      "content": "<h2>1. Bersihkan Filter Secara Berkala</h2><p>Bersihkan filter strainer setiap 3 bulan sekali untuk mencegah penyumbatan yang dapat merusak impeller pompa.</p><h2>2. Periksa Kapasitor</h2><p>Kapasitor yang lemah adalah penyebab utama pompa tidak mau hidup. Periksa setiap 6 bulan dan ganti jika sudah lemah.</p><h2>3. Cek Instalasi Pipa</h2><p>Pastikan tidak ada kebocoran pada instalasi pipa hisap maupun tekan. Kebocoran menyebabkan pompa bekerja lebih keras dan cepat aus.</p><h2>4. Jaga Pompa dari Terendam Air</h2><p>Pastikan pompa (kecuali submersible) tidak terendam air hujan. Letakkan di tempat yang terlindung dan berventilasi baik.</p><h2>5. Service Berkala</h2><p>Lakukan service di bengkel resmi KTH setiap 2 tahun sekali untuk memastikan semua komponen dalam kondisi optimal.</p>",
+      "author": "Tim KTH",
+      "published_at": "2026-05-28T00:00:00+00:00",
+      "created_at": "2026-07-01T12:34:37.188314+00:00",
+      "updated_at": "2026-07-01T12:34:37.188314+00:00"
+    },
+    {
+      "id": "c16104f1-eba9-4fc4-ae2f-303ecf6aab1d",
+      "slug": "perbedaan-jet-vs-submersible",
+      "title": "Jet Pump vs Submersible: Mana yang Tepat?",
+      "excerpt": "Perbandingan teknis dan biaya antara pompa jet dan pompa celup.",
+      "category": "Edukasi",
+      "cover_url": "",
+      "content": "<h2>Jet Pump</h2><p>Jet pump dipasang di atas permukaan tanah. Perawatan mudah karena bisa diakses langsung. Cocok untuk sumur dalam hingga 30 meter. Harga relatif lebih terjangkau.</p><h2>Submersible</h2><p>Pompa celup terendam di dalam sumur. Lebih hemat energi untuk sumur sangat dalam (>30m). Lebih senyap karena berada di dalam air. Namun perawatan lebih sulit karena harus mengangkat pompa dari sumur.</p><h2>Kesimpulan</h2><p>Untuk sumur 9–30 meter dengan anggaran terbatas: pilih Jet Pump KTH. Untuk sumur >30 meter atau kebutuhan debit besar: pilih Submersible KTH.</p>",
+      "author": "Tim KTH",
+      "published_at": "2026-05-10T00:00:00+00:00",
+      "created_at": "2026-07-01T12:34:37.188314+00:00",
+      "updated_at": "2026-07-01T12:34:37.188314+00:00"
+    },
+    {
+      "id": "ce128936-062a-49b8-a5cd-82eae4275790",
+      "slug": "garansi-resmi-kth",
+      "title": "Apa Saja yang Dicover Garansi Resmi KTH?",
+      "excerpt": "Penjelasan lengkap mengenai garansi 1 tahun ganti unit baru dari Kaito Hiro.",
+      "category": "Garansi",
+      "cover_url": "",
+      "content": "<h2>Garansi Ganti Unit Baru</h2><p>KTH memberikan garansi resmi 1 tahun ganti unit baru — bukan servis, bukan perbaikan. Jika produk Anda mengalami kerusakan dalam masa garansi akibat cacat produksi, kami ganti dengan unit baru.</p><h2>Yang Dicover</h2><ul><li>Kerusakan motor akibat cacat produksi</li><li>Kerusakan kapasitor bawaan</li><li>Kebocoran rumah pompa akibat cacat material</li></ul><h2>Yang Tidak Dicover</h2><ul><li>Kerusakan akibat instalasi yang salah</li><li>Kerusakan akibat tegangan listrik tidak stabil</li><li>Kerusakan akibat pompa terendam banjir (kecuali tipe submersible)</li></ul><h2>Cara Klaim</h2><p>Hubungi distributor resmi KTH terdekat dengan membawa produk dan bukti pembelian. Proses klaim maksimal 7 hari kerja.</p>",
+      "author": "Tim KTH",
+      "published_at": "2026-04-22T00:00:00+00:00",
+      "created_at": "2026-07-01T12:34:37.188314+00:00",
+      "updated_at": "2026-07-01T12:34:37.188314+00:00"
+    },
+    {
+      "id": "8ba3d435-c927-47c7-acfb-f8efeea4cdbc",
+      "slug": "cara-klaim-garansi-pompa-air-kth-panduan-langkah-demi-langkah",
+      "title": "Cara Klaim Garansi Pompa Air KTH: Panduan Lengkap Tanpa Ribet",
+      "excerpt": "Garansi 1 tahun ganti unit baru adalah janji kami kepada setiap pelanggan. Ikuti panduan ini untuk memastikan proses klaim Anda berjalan lancar dan cepat.",
+      "category": "Garansi",
+      "cover_url": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+      "content": "<h2>Garansi KTH: Janji yang Kami Pegang</h2>\r\n<p>Ketika Anda membeli pompa air Kaito Hiro, Anda tidak hanya membeli sebuah mesin — Anda membeli ketenangan pikiran. Garansi resmi 1 tahun ganti unit baru adalah komitmen kami terhadap kualitas produk dan kepuasan pelanggan. Berlaku untuk semua produk KTH original yang dibeli dari distributor dan retailer resmi di seluruh Indonesia.</p>\r\n\r\n<h2>Apa yang Dicakup oleh Garansi?</h2>\r\n<ul>\r\n  <li>✅ Cacat produksi atau material (manufacturing defect)</li>\r\n  <li>✅ Kerusakan motor akibat tegangan listrik normal sesuai spesifikasi</li>\r\n  <li>✅ Kerusakan mechanical seal dalam kondisi pemakaian normal</li>\r\n  <li>✅ Kerusakan impeller akibat material atau produksi</li>\r\n  <li>✅ Kerusakan komponen elektronik (pressure switch, kapasitor) akibat cacat pabrik</li>\r\n</ul>\r\n\r\n<h2>Apa yang TIDAK Dicakup?</h2>\r\n<ul>\r\n  <li>❌ Kerusakan akibat instalasi yang salah</li>\r\n  <li>❌ Kerusakan akibat dry running (pompa beroperasi tanpa air)</li>\r\n  <li>❌ Kerusakan akibat voltase listrik di luar ±10% dari nominal</li>\r\n  <li>❌ Kerusakan akibat bencana alam (banjir, petir langsung, gempa)</li>\r\n  <li>❌ Kerusakan akibat pembongkaran oleh pihak tidak berwenang</li>\r\n  <li>❌ Produk yang dibeli dari retailer tidak resmi</li>\r\n</ul>\r\n\r\n<h2>Dokumen yang Diperlukan</h2>\r\n<ol>\r\n  <li><strong>Kartu Garansi Resmi KTH</strong> — sudah diisi dan distempel retailer</li>\r\n  <li><strong>Nota/Faktur Pembelian</strong> — tanggal beli, tempat beli, dan tipe produk</li>\r\n  <li><strong>Produk yang bermasalah</strong> — bawa ke service center atau hubungi teknisi KTH</li>\r\n  <li><strong>Foto kondisi produk</strong> — dokumentasikan kerusakan dari berbagai sudut</li>\r\n</ol>\r\n<p><strong>Tip penting:</strong> Simpan kartu garansi dan nota pembelian sejak hari pertama. Kehilangan dokumen ini bisa mempersulit proses klaim.</p>\r\n\r\n<h2>Prosedur Klaim: Langkah demi Langkah</h2>\r\n\r\n<h3>Langkah 1: Identifikasi Masalah</h3>\r\n<p>Periksa panduan troubleshooting dasar (cek kabel, MCB, level air). Dokumentasikan gejala kerusakan dengan foto atau video, dan catat kapan pertama kali masalah muncul.</p>\r\n\r\n<h3>Langkah 2: Hubungi Customer Service KTH</h3>\r\n<ul>\r\n  <li><strong>WhatsApp Official:</strong> Nomor di website dan kartu garansi</li>\r\n  <li><strong>Distributor Terdekat:</strong> 150+ titik layanan seluruh Indonesia</li>\r\n  <li><strong>Email:</strong> Kirim foto dan detail produk</li>\r\n  <li><strong>Telepon:</strong> Senin–Sabtu, 08.00–17.00 WIB</li>\r\n</ul>\r\n<p>Tim kami memberikan nomor tiket klaim dalam <strong>1×24 jam kerja</strong>.</p>\r\n\r\n<h3>Langkah 3: Diagnosa Teknis (3–5 hari kerja)</h3>\r\n<p>Tersedia melalui kunjungan teknisi (kota-kota tertentu), pengiriman ke service center, atau diagnosa di distributor.</p>\r\n\r\n<h3>Langkah 4: Keputusan</h3>\r\n<ul>\r\n  <li><strong>Ganti Unit Baru:</strong> Unit baru dengan garansi mulai dari tanggal penggantian</li>\r\n  <li><strong>Perbaikan Gratis:</strong> Untuk kerusakan minor yang bisa diperbaiki sempurna</li>\r\n  <li><strong>Tidak Disetujui:</strong> Penjelasan tertulis + opsi perbaikan berbayar</li>\r\n</ul>\r\n\r\n<h3>Langkah 5: Pengiriman Unit Pengganti</h3>\r\n<p>Dikirimkan dalam <strong>7–14 hari kerja</strong> setelah keputusan disetujui.</p>\r\n\r\n<h2>Tips Memperlancar Proses Klaim</h2>\r\n<ol>\r\n  <li>Registrasikan produk segera setelah membeli via QR code di kartu garansi</li>\r\n  <li>Jangan membongkar pompa sendiri — otomatis membatalkan garansi</li>\r\n  <li>Kemas produk dengan baik saat pengiriman</li>\r\n  <li>Berikan informasi selengkap mungkin untuk mempercepat diagnosa</li>\r\n  <li>Simpan nomor tiket klaim untuk tracking status</li>\r\n</ol>\r\n\r\n<h2>Komitmen Kami</h2>\r\n<p>Di KTH, garansi bukan sekadar kewajiban hukum — melainkan cerminan kepercayaan diri kami terhadap kualitas produk. Dengan 150+ distributor di seluruh Indonesia dan tim customer service yang responsif, kami berkomitmen untuk membuat pengalaman klaim garansi Anda selancar mungkin.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-07-01T08:30:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    },
+    {
+      "id": "43728f0b-718a-461f-ba78-eae861ed9762",
+      "slug": "perbedaan-pompa-sentrifugal-vs-jet-pump-vs-submersible",
+      "title": "Pompa Sentrifugal vs. Jet Pump vs. Submersible: Mana yang Cocok untuk Anda?",
+      "excerpt": "Tiga jenis pompa air paling populer memiliki kelebihan dan kekurangannya masing-masing. Panduan perbandingan mendalam ini membantu Anda memilih yang paling sesuai dengan kondisi sumur dan kebutuhan rumah Anda.",
+      "category": "Edukasi",
+      "cover_url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+      "content": "<h2>Tiga Teknologi, Satu Tujuan</h2>\r\n<p>Semua jenis pompa air memiliki tujuan yang sama: mengambil air dari sumbernya dan mendistribusikannya ke seluruh rumah. Namun cara kerja, kelebihan, dan kekurangan masing-masing sangat berbeda. Memahami perbedaan ini adalah kunci untuk membuat pilihan yang tepat.</p>\r\n\r\n<h2>Pompa Sentrifugal: Si Sederhana dan Andal</h2>\r\n<h3>Cara Kerja</h3>\r\n<p>Pompa sentrifugal menggunakan impeller (kipas berputar) untuk menciptakan tekanan melalui gaya sentrifugal. Air masuk dari pusat impeller dan didorong keluar melalui tepi luar dengan kecepatan tinggi, menciptakan tekanan yang mengalirkan air ke pipa distribusi.</p>\r\n\r\n<h3>Kelebihan dan Kekurangan</h3>\r\n<p><strong>Kelebihan:</strong> ✅ Harga paling terjangkau &nbsp; ✅ Instalasi mudah &nbsp; ✅ Perawatan sederhana, suku cadang mudah didapat &nbsp; ✅ Suara halus</p>\r\n<p><strong>Kekurangan:</strong> ❌ Terbatas untuk sumur dangkal (max 9–12 meter) &nbsp; ❌ Perlu priming manual &nbsp; ❌ Rentan kavitasi</p>\r\n<p><strong>Ideal untuk:</strong> Rumah satu lantai dengan sumur gali dangkal atau pompa booster dari PDAM.</p>\r\n\r\n<h2>Jet Pump: Performa Tinggi untuk Sumur Dalam</h2>\r\n<h3>Cara Kerja</h3>\r\n<p>Jet pump menggunakan kombinasi pompa sentrifugal dengan ejector (venturi) yang menciptakan efek jet untuk mengisap air dari kedalaman lebih besar. Tersedia dalam dua tipe: shallow well (hingga 9 meter) dan deep well (9–30 meter).</p>\r\n\r\n<h3>Kelebihan dan Kekurangan</h3>\r\n<p><strong>Kelebihan:</strong> ✅ Mampu mengisap dari 9–30 meter &nbsp; ✅ Tekanan kerja tinggi untuk rumah 2–3 lantai &nbsp; ✅ Motor di atas tanah, mudah diakses &nbsp; ✅ Mudah diperbaiki</p>\r\n<p><strong>Kekurangan:</strong> ❌ Lebih mahal dari sentrifugal &nbsp; ❌ Lebih berisik &nbsp; ❌ Efisiensi lebih rendah &nbsp; ❌ Butuh dua jalur pipa ke sumur (deep well)</p>\r\n<p><strong>Ideal untuk:</strong> Sumur bor 10–30 meter dan rumah dua lantai yang membutuhkan tekanan tinggi.</p>\r\n\r\n<h2>Pompa Submersible: Teknologi Terdalam</h2>\r\n<h3>Cara Kerja</h3>\r\n<p>Pompa submersible seluruhnya direndam di dalam air. Motor dan pompa menjadi satu unit kedap air. Air didorong langsung ke atas tanpa proses pengisapan yang kompleks — secara fisika ini jauh lebih efisien.</p>\r\n\r\n<h3>Kelebihan dan Kekurangan</h3>\r\n<p><strong>Kelebihan:</strong> ✅ Kedalaman hingga 200+ meter &nbsp; ✅ Efisiensi tertinggi &nbsp; ✅ Sangat senyap &nbsp; ✅ Tidak perlu priming &nbsp; ✅ Aliran stabil</p>\r\n<p><strong>Kekurangan:</strong> ❌ Harga jauh lebih mahal &nbsp; ❌ Instalasi dan perbaikan perlu teknisi khusus &nbsp; ❌ Unit harus diangkat dari sumur untuk diperbaiki &nbsp; ❌ Sensitif terhadap dry running</p>\r\n<p><strong>Ideal untuk:</strong> Sumur bor dalam (>30 meter), pertanian, industri, dan gedung bertingkat.</p>\r\n\r\n<h2>Rekomendasi Berdasarkan Kondisi Anda</h2>\r\n<ul>\r\n  <li><strong>Kedalaman 0–9 meter:</strong> Pilih Pompa Sentrifugal — tidak perlu membayar lebih untuk jet pump</li>\r\n  <li><strong>Kedalaman 9–25 meter:</strong> Pilih Jet Pump — range optimalnya</li>\r\n  <li><strong>Kedalaman 25–30 meter:</strong> Pertimbangkan deep well jet pump atau submersible entry-level</li>\r\n  <li><strong>Kedalaman >30 meter:</strong> Wajib Pompa Submersible — tidak ada alternatif efektif</li>\r\n</ul>\r\n\r\n<h2>Produk KTH untuk Setiap Kebutuhan</h2>\r\n<ul>\r\n  <li><strong>Seri KTH-SP:</strong> Pompa sentrifugal untuk sumur dangkal, efisien dan terjangkau</li>\r\n  <li><strong>Seri KTH-JP:</strong> Jet pump shallow dan deep well, performa tinggi untuk sumur menengah</li>\r\n  <li><strong>Seri KTH-SUB:</strong> Submersible pump untuk sumur dalam dan kebutuhan industri</li>\r\n</ul>\r\n<p>Konsultasikan kebutuhan spesifik Anda dengan distributor KTH terdekat untuk rekomendasi yang tepat sasaran.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-06-20T11:00:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    },
+    {
+      "id": "1de4e987-15e3-4cdf-96a2-1bea63941784",
+      "slug": "merawat-pompa-air-tips-lengkap-agar-awet-bertahun-tahun",
+      "title": "Tips Merawat Pompa Air agar Awet Bertahun-tahun: Panduan Komprehensif",
+      "excerpt": "Pompa air yang terawat bisa bertahan hingga 10 tahun atau lebih. Ikuti panduan perawatan komprehensif ini — dari pembersihan rutin hingga penanganan darurat — untuk memaksimalkan investasi Anda.",
+      "category": "Panduan",
+      "cover_url": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80",
+      "content": "<h2>Filosofi Perawatan: Proaktif vs. Reaktif</h2>\r\n<p>Ada dua jenis pemilik pompa air: yang merawat secara proaktif dan yang baru bertindak saat pompa sudah bermasalah. Kelompok pertama jarang menghabiskan lebih dari Rp 200.000 per tahun untuk perawatan. Kelompok kedua bisa menghabiskan jutaan rupiah untuk perbaikan atau penggantian unit.</p>\r\n\r\n<h2>Perawatan Harian (Tanpa Biaya)</h2>\r\n<h3>Perhatikan Suara Pompa</h3>\r\n<p>Pompa yang sehat bersuara konsisten dan halus. Kenali \"suara normal\" pompa Anda:</p>\r\n<ul>\r\n  <li><strong>Suara gerinda atau cakar:</strong> Bearing mulai aus atau ada benda asing di impeller</li>\r\n  <li><strong>Suara kavitasi (seperti kerikil dalam drum):</strong> Air tidak cukup atau ada udara dalam sistem</li>\r\n  <li><strong>Suara berdengung kuat:</strong> Motor bekerja dalam kondisi over/under voltage</li>\r\n  <li><strong>Suara air menetes saat pompa mati:</strong> Foot valve atau check valve bocor</li>\r\n</ul>\r\n\r\n<h2>Perawatan Bulanan</h2>\r\n<h3>Pembersihan Filter dan Saringan</h3>\r\n<ol>\r\n  <li>Matikan pompa dan cabut dari sumber listrik</li>\r\n  <li>Tutup valve inlet dan outlet</li>\r\n  <li>Lepas dan bersihkan strainer/foot valve dengan air bersih</li>\r\n  <li>Periksa kondisi mesh — ganti jika ada lubang atau korosi</li>\r\n  <li>Pasang kembali dan tes operasi</li>\r\n</ol>\r\n\r\n<h3>Periksa Koneksi Listrik</h3>\r\n<p>Periksa kondisi isolasi kabel (tidak retak/mengelupas), konektor tidak berkarat atau longgar, MCB/circuit breaker, dan pastikan grounding masih terhubung dengan baik.</p>\r\n\r\n<h2>Perawatan Tahunan</h2>\r\n<h3>Pemeriksaan Mechanical Seal</h3>\r\n<p>Mechanical seal mencegah air masuk ke motor. Tanda-tanda seal aus:</p>\r\n<ul>\r\n  <li>Air menetes dari area bodi motor</li>\r\n  <li>Suara gesekan saat motor berputar</li>\r\n  <li>Konsumsi air di sumur tidak wajar</li>\r\n</ul>\r\n<p>Biaya penggantian seal jauh lebih murah daripada membiarkan air merusak motor.</p>\r\n\r\n<h3>Kalibrasi Pressure Switch</h3>\r\n<p>Pressure switch yang tidak terkalibrasi bisa menyebabkan pompa terlalu sering menyala/mati (short cycling) — merusak motor — atau tidak mati meskipun tekanan sudah tercapai, membuang energi.</p>\r\n\r\n<h2>Persiapan Musim Kemarau</h2>\r\n<ul>\r\n  <li>Lakukan service preventif lengkap 2 bulan sebelum kemarau</li>\r\n  <li>Periksa kedalaman air sumur dan bandingkan dengan tahun lalu</li>\r\n  <li>Pastikan foot valve berfungsi dengan baik</li>\r\n  <li>Kurangi jam operasional — pompa hanya saat benar-benar diperlukan</li>\r\n  <li>Pantau level air sumur lebih sering, jangan paksa pompa jika air sangat dangkal</li>\r\n</ul>\r\n\r\n<h2>Penanganan Darurat</h2>\r\n<h3>Pompa Menyala tapi Tidak Ada Air</h3>\r\n<ol>\r\n  <li>Cek apakah pipa isap terisi air (priming)</li>\r\n  <li>Periksa foot valve — mungkin tersumbat atau tidak menutup sempurna</li>\r\n  <li>Pastikan tidak ada kebocoran di jalur pipa isap (udara masuk)</li>\r\n  <li>Periksa level air di sumur</li>\r\n</ol>\r\n\r\n<h3>Pompa Tidak Menyala</h3>\r\n<ol>\r\n  <li>Periksa MCB/fuse — mungkin trip</li>\r\n  <li>Cek voltase listrik dengan multimeter</li>\r\n  <li>Periksa kapasitor (untuk pompa single phase) — komponen yang sering rusak pertama</li>\r\n  <li>Rasakan suhu motor — jika sangat panas, tunggu 30 menit agar thermal protection reset</li>\r\n</ol>\r\n\r\n<h2>Jadwal Perawatan Ringkas</h2>\r\n<ul>\r\n  <li>✅ <strong>Harian:</strong> Dengarkan suara pompa, pantau aliran</li>\r\n  <li>✅ <strong>Bulanan:</strong> Bersihkan filter, periksa koneksi listrik</li>\r\n  <li>✅ <strong>3 Bulanan:</strong> Lubrikasi bearing, flush sistem pipa</li>\r\n  <li>✅ <strong>Tahunan:</strong> Service komprehensif, kalibrasi pressure switch</li>\r\n  <li>✅ <strong>Sebelum kemarau:</strong> Service preventif, periksa level sumur</li>\r\n</ul>\r\n\r\n<h2>Penutup</h2>\r\n<p>Merawat pompa air tidak memerlukan keahlian teknis yang tinggi — hanya kedisiplinan dan perhatian. Tim teknisi KTH tersedia untuk kunjungan service di rumah Anda. Hubungi distributor terdekat untuk menjadwalkan service berkala.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-06-05T10:00:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    },
+    {
+      "id": "4bcc7d4c-bd5f-4498-89c0-685b0a31ae2e",
+      "slug": "pompa-air-sni-apa-artinya-dan-mengapa-penting",
+      "title": "Pompa Air Ber-SNI: Apa Artinya dan Mengapa Harus Anda Prioritaskan?",
+      "excerpt": "Logo SNI pada pompa air bukan sekadar pajangan. Di baliknya tersimpan serangkaian pengujian ketat yang menjamin keamanan dan performa. Pelajari apa saja yang diuji dan bagaimana ini melindungi keluarga Anda.",
+      "category": "Edukasi",
+      "cover_url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+      "content": "<h2>SNI: Lebih dari Sekadar Stempel</h2>\r\n<p>Standar Nasional Indonesia (SNI) dikelola oleh Badan Standardisasi Nasional (BSN). Untuk pompa air, SNI yang berlaku adalah <strong>SNI 4112:2016</strong> — dokumen teknis 47 halaman yang merinci setiap aspek kualitas. Proses sertifikasinya sangat ketat dan tidak bisa \"dibeli\" tanpa produk benar-benar melewati uji laboratorium independen.</p>\r\n\r\n<h2>Apa Saja yang Diuji dalam Sertifikasi SNI?</h2>\r\n\r\n<h3>1. Pengujian Performa (Performance Test)</h3>\r\n<p>Pompa diuji untuk memverifikasi spesifikasi yang tertera di label:</p>\r\n<ul>\r\n  <li>Kapasitas aliran (Q) dalam liter per menit</li>\r\n  <li>Tinggi tekan maksimum (H max) dalam meter</li>\r\n  <li>Daya input aktual vs. yang tertera di spesifikasi</li>\r\n  <li>Efisiensi pompa pada berbagai titik operasi</li>\r\n</ul>\r\n<p>Studi BSN menemukan <strong>40% pompa tanpa SNI memiliki performa aktual 30–50% lebih rendah</strong> dari klaim spesifikasinya.</p>\r\n\r\n<h3>2. Pengujian Kelistrikan (Electrical Safety Test)</h3>\r\n<ul>\r\n  <li><strong>Insulasi kabel:</strong> Minimum harus menahan 1.500V tanpa breakdown</li>\r\n  <li><strong>Grounding:</strong> Continuity dan resistance koneksi ground</li>\r\n  <li><strong>Thermal protection:</strong> Thermostat harus aktif sebelum suhu merusak tercapai</li>\r\n  <li><strong>Leakage current:</strong> Arus bocor diatur sangat ketat untuk mencegah sengatan listrik</li>\r\n</ul>\r\n\r\n<h3>3. Pengujian Ketahanan Material</h3>\r\n<ul>\r\n  <li>Impeller tidak boleh melepas logam berat ke dalam air</li>\r\n  <li>Seal dan gasket harus food-grade untuk bagian yang kontak dengan air</li>\r\n  <li>Casing harus tahan korosi sesuai standar accelerated corrosion test</li>\r\n</ul>\r\n\r\n<h2>Risiko Nyata Menggunakan Pompa Non-SNI</h2>\r\n\r\n<h3>Risiko Keselamatan Listrik</h3>\r\n<p>Pompa dengan insulasi kabel buruk di lingkungan lembab adalah kombinasi mematikan. Data Komite Nasional Keselamatan Kelistrikan menunjukkan peralatan listrik tidak ber-SNI menjadi penyebab dalam lebih dari <strong>35% kasus kecelakaan listrik rumah tangga</strong>.</p>\r\n\r\n<h3>Kontaminasi Air Minum</h3>\r\n<p>Material tidak food-grade bisa melepaskan senyawa berbahaya seperti timbal dari komponen logam murahan atau plasticizer dari seal berkualitas rendah. Senyawa ini bisa terakumulasi dalam tubuh selama bertahun-tahun tanpa disadari.</p>\r\n\r\n<h3>Kerugian Finansial</h3>\r\n<ul>\r\n  <li>Umur pakai rata-rata 1–2 tahun vs. 5–7 tahun untuk pompa ber-SNI</li>\r\n  <li>Konsumsi listrik lebih boros 20–40% akibat efisiensi motor yang buruk</li>\r\n  <li>Biaya perbaikan berulang yang menguras kantong</li>\r\n</ul>\r\n\r\n<h2>Cara Verifikasi Keaslian Sertifikasi SNI</h2>\r\n<ol>\r\n  <li>Kunjungi <strong>sispk.bsn.go.id</strong></li>\r\n  <li>Cari nomor sertifikasi SNI yang tertera di produk</li>\r\n  <li>Verifikasi nama produsen dan nomor produk cocok dengan database</li>\r\n</ol>\r\n<p>Semua produk Kaito Hiro dapat diverifikasi di database resmi BSN.</p>\r\n\r\n<h2>Komitmen KTH terhadap Standar Kualitas</h2>\r\n<ul>\r\n  <li><strong>Motor 100% kawat tembaga:</strong> Bukan aluminium atau copper-clad aluminium (CCA)</li>\r\n  <li><strong>Pengujian individual sebelum keluar pabrik:</strong> Setiap unit diuji, bukan hanya sampling</li>\r\n  <li><strong>Impeller stainless steel grade 304:</strong> Tahan korosi, tidak mencemari air</li>\r\n  <li><strong>IP44 rating:</strong> Aman dari percikan air</li>\r\n</ul>\r\n\r\n<h2>Kesimpulan</h2>\r\n<p>Pompa air mengalirkan air yang Anda minum, masak, dan gunakan setiap hari. Keamanan keluarga Anda tidak seharusnya dikompromikan demi menghemat beberapa ratus ribu rupiah. Pilihlah pompa ber-SNI dari merek terpercaya — investasi yang sedikit lebih besar hari ini akan memberi ketenangan pikiran selama bertahun-tahun.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-05-10T09:00:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    },
+    {
+      "id": "d926fd68-2300-49f6-b0f5-cf6a93aae04e",
+      "slug": "kenapa-pompa-air-cepat-rusak-7-penyebab-utama",
+      "title": "7 Penyebab Pompa Air Cepat Rusak dan Cara Mencegahnya",
+      "excerpt": "Pompa air Anda sering bermasalah padahal baru dibeli? Kenali 7 penyebab utama kerusakan pompa dan langkah pencegahan efektif yang bisa Anda lakukan sendiri di rumah.",
+      "category": "Tips",
+      "cover_url": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80",
+      "content": "<h2>Pompa Baru, Masalah Lama?</h2>\r\n<p>Salah satu keluhan paling umum adalah: <em>\"Pompa saya baru 8 bulan sudah bermasalah.\"</em> Padahal hampir selalu ada faktor yang bisa dicegah dari awal. Pompa air yang berkualitas seharusnya bertahan 5–10 tahun jika dirawat dengan benar.</p>\r\n\r\n<h2>Penyebab #1: Instalasi yang Salah</h2>\r\n<p>Ini adalah penyebab nomor satu yang sering diabaikan. Kesalahan instalasi yang paling sering:</p>\r\n<ul>\r\n  <li><strong>Pipa isap terlalu panjang atau bengkok:</strong> Membuat pompa bekerja lebih keras dari kapasitas seharusnya</li>\r\n  <li><strong>Tidak ada foot valve:</strong> Menyebabkan air jatuh kembali ke sumur saat pompa mati</li>\r\n  <li><strong>Posisi pompa tidak datar:</strong> Menimbulkan getaran berlebih yang merusak bearing</li>\r\n  <li><strong>Kabel listrik tidak sesuai spesifikasi:</strong> Voltase drop membuat motor kerja dalam kondisi under-voltage</li>\r\n</ul>\r\n<p><strong>Solusi:</strong> Selalu gunakan teknisi berpengalaman untuk instalasi awal. Biaya instalasi yang lebih mahal jauh lebih murah dibanding biaya perbaikan akibat instalasi yang salah.</p>\r\n\r\n<h2>Penyebab #2: Air Kering (Dry Running)</h2>\r\n<p>Dry running adalah kondisi di mana pompa berputar tanpa ada air yang dialirkan — seperti menjalankan mesin tanpa oli. Dalam kondisi ini, impeller dan mechanical seal bisa rusak dalam hitungan menit, panas gesekan mencapai lebih dari 120°C.</p>\r\n<p><strong>Cara mencegah:</strong></p>\r\n<ul>\r\n  <li>Pasang float switch atau level sensor di sumur</li>\r\n  <li>Pilih pompa dengan fitur dry-run protection otomatis</li>\r\n  <li>Jangan pernah menghidupkan pompa saat sumur sedang kering di musim kemarau</li>\r\n</ul>\r\n\r\n<h2>Penyebab #3: Tegangan Listrik Tidak Stabil</h2>\r\n<p>Motor listrik dirancang beroperasi pada tegangan 220V ±10%. Ketika tegangan jatuh di bawah 198V, arus yang mengalir justru meningkat, menyebabkan motor kepanasan.</p>\r\n<p><strong>Tanda-tanda masalah:</strong> pompa sering trip, motor panas setelah beberapa menit, suara berubah saat jam sibuk.</p>\r\n<p><strong>Solusi:</strong> Pasang stabilizer voltase atau AVR. Investasi Rp 300.000–500.000 bisa menghemat biaya perbaikan jutaan rupiah.</p>\r\n\r\n<h2>Penyebab #4: Air Mengandung Pasir atau Kotoran</h2>\r\n<p>Partikel pasir dan lumpur mengikis impeller dan casing seperti amplas yang terus berputar. Pompa yang sering memompa air berlumpur biasanya menunjukkan keausan dalam 12–18 bulan, jauh di bawah umur normal 5–7 tahun.</p>\r\n<p><strong>Pencegahan:</strong> Pasang filter pasir, gunakan foot valve dengan filter baik, lakukan flushing sumur secara berkala, dan pilih impeller stainless steel.</p>\r\n\r\n<h2>Penyebab #5: Tekanan Kerja Melebihi Kapasitas</h2>\r\n<p>Memaksa pompa bekerja di luar spesifikasi max head — misalnya pompa 20-meter head dipaksa mengisi tangki di ketinggian 25 meter — membuat bearing dan seal aus 3–5 kali lebih cepat dari normal.</p>\r\n\r\n<h2>Penyebab #6: Kurangnya Perawatan Berkala</h2>\r\n<p><strong>Jadwal perawatan yang direkomendasikan:</strong></p>\r\n<ul>\r\n  <li><strong>Setiap 3 bulan:</strong> Bersihkan filter, periksa kondisi kabel</li>\r\n  <li><strong>Setiap 6 bulan:</strong> Periksa tekanan kerja, bersihkan kipas pendingin</li>\r\n  <li><strong>Setiap 1 tahun:</strong> Service menyeluruh, ganti seal jika diperlukan</li>\r\n  <li><strong>Setiap 3–5 tahun:</strong> Ganti bearing dan mechanical seal secara preventif</li>\r\n</ul>\r\n\r\n<h2>Penyebab #7: Produk Palsu atau Berkualitas Rendah</h2>\r\n<p>Pompa dengan motor kawat aluminium tipis, impeller plastik rapuh, dan tanpa thermal protection mungkin terlihat sama secara fisik, namun umur pakainya hanya 6–12 bulan meskipun dirawat dengan baik.</p>\r\n<p><strong>Cara mengenali produk asli KTH:</strong></p>\r\n<ul>\r\n  <li>Cek sertifikasi SNI dan nomor registrasi di sispk.bsn.go.id</li>\r\n  <li>Beli dari distributor resmi</li>\r\n  <li>Periksa kartu garansi hologram KTH</li>\r\n  <li>Bandingkan berat: pompa berkualitas lebih berat karena material lebih solid</li>\r\n</ul>\r\n\r\n<h2>Kesimpulan</h2>\r\n<p>Kerusakan pompa air hampir selalu bisa dicegah. Ingat prinsip ini: <strong>biaya pencegahan selalu jauh lebih murah dari biaya perbaikan.</strong> Investasikan sedikit waktu dan perhatian untuk merawat pompa Anda, dan ia akan melayani keluarga Anda selama bertahun-tahun.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-04-22T08:00:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    },
+    {
+      "id": "364d1f29-4966-4f45-86af-6882ef2210cb",
+      "slug": "cara-memilih-pompa-air-yang-tepat-untuk-rumah-anda",
+      "title": "Panduan Lengkap: Cara Memilih Pompa Air yang Tepat untuk Rumah Anda",
+      "excerpt": "Memilih pompa air yang salah bisa berujung pada tagihan listrik membengkak dan performa buruk. Pelajari 7 faktor kunci yang harus Anda pertimbangkan sebelum membeli pompa air.",
+      "category": "Panduan",
+      "cover_url": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&q=80",
+      "content": "<h2>Mengapa Memilih Pompa Air yang Tepat Itu Penting?</h2>\r\n<p>Pompa air adalah jantung sistem distribusi air di rumah Anda. Sebuah pilihan yang salah tidak hanya membuang uang, tetapi juga bisa menyebabkan masalah serius: tekanan air lemah saat mandi, sumur cepat kering, atau tagihan listrik yang tiba-tiba melonjak drastis.</p>\r\n<p>Berdasarkan survei Asosiasi Industri Pompa Indonesia, lebih dari <strong>62% konsumen</strong> mengaku menyesal dengan pilihan pompa air mereka karena tidak melakukan riset yang cukup. Jangan jadi bagian dari statistik itu.</p>\r\n\r\n<h2>1. Tentukan Kedalaman Sumber Air Anda</h2>\r\n<p>Langkah pertama yang paling krusial adalah mengetahui kedalaman sumur atau sumber air Anda. Ada tiga kategori utama:</p>\r\n<ul>\r\n  <li><strong>Sumur dangkal (0–9 meter):</strong> Cocok menggunakan pompa sentrifugal biasa. Lebih hemat dan mudah perawatannya.</li>\r\n  <li><strong>Sumur dalam (9–30 meter):</strong> Memerlukan pompa jet pump atau submersible. Mampu menarik air dari kedalaman lebih besar tanpa kehilangan tekanan.</li>\r\n  <li><strong>Sumur sangat dalam (30+ meter):</strong> Wajib menggunakan pompa submersible yang direndam langsung di dalam air.</li>\r\n</ul>\r\n<p><strong>Tips:</strong> Ukur kedalaman sumur saat musim kemarau untuk mendapatkan kondisi terburuk yang harus ditangani pompa Anda.</p>\r\n\r\n<h2>2. Hitung Kebutuhan Debit Air Harian</h2>\r\n<p>Standar WHO merekomendasikan minimal <strong>50–100 liter per orang per hari</strong>. Di Indonesia, rata-rata konsumsi rumah tangga mencapai 120–150 liter per orang per hari.</p>\r\n<p>Cara menghitung:</p>\r\n<ol>\r\n  <li>Jumlah anggota keluarga × 120 liter = kebutuhan harian</li>\r\n  <li>Bagi dengan jam operasional pompa (biasanya 4–6 jam/hari)</li>\r\n  <li>Hasil ini adalah kapasitas minimum pompa dalam L/jam</li>\r\n</ol>\r\n\r\n<h2>3. Perhatikan Ketinggian Dorongan Air (Head Pressure)</h2>\r\n<p>Head pressure adalah kemampuan pompa mendorong air ke atas. Setiap meter ketinggian membutuhkan sekitar <strong>0,1 bar tekanan</strong>. Ini sangat penting untuk rumah 2 lantai atau lebih.</p>\r\n<blockquote><p>\"Pompa dengan head rendah yang dipaksa mengisi tangki di lantai tiga akan bekerja sangat keras dan usia pakainya jauh lebih pendek.\" — Ir. Budi Santoso, Insinyur Mekanikal</p></blockquote>\r\n<p>Rumus: Total head = kedalaman sumur + ketinggian tangki + 20% margin keamanan.</p>\r\n\r\n<h2>4. Pilih Daya Listrik yang Sesuai</h2>\r\n<ul>\r\n  <li><strong>100–250 watt:</strong> Rumah 1 lantai, sumur dangkal</li>\r\n  <li><strong>250–500 watt:</strong> Rumah 2 lantai, sumur menengah (10–20 meter)</li>\r\n  <li><strong>500–1000 watt:</strong> Rumah besar, sumur dalam, atau penggunaan komersial</li>\r\n</ul>\r\n<p>Pompa berkualitas tinggi bisa menghemat listrik 20–30% dibanding pompa murah dengan daya yang sama.</p>\r\n\r\n<h2>5. Pastikan Material Berkualitas SNI</h2>\r\n<p>Pompa ber-SNI telah melalui pengujian ketat: efisiensi energi minimum, ketahanan material terhadap korosi, keamanan instalasi listrik, dan performa sesuai spesifikasi. Produk Kaito Hiro (KTH) menggunakan <strong>motor 100% kawat tembaga murni</strong> dengan konduktivitas listrik 60% lebih baik dari aluminium.</p>\r\n\r\n<h2>6. Cek Garansi dan Purna Jual</h2>\r\n<p>Standar garansi yang baik di industri:</p>\r\n<ul>\r\n  <li>Minimum 1 tahun garansi unit</li>\r\n  <li>Garansi <strong>ganti unit baru</strong>, bukan sekadar service</li>\r\n  <li>Jaringan service center yang tersebar luas</li>\r\n</ul>\r\n<p>KTH memberikan garansi resmi 1 tahun ganti unit baru dengan jaringan lebih dari 150 distributor di seluruh Indonesia.</p>\r\n\r\n<h2>7. Pertimbangkan Fitur Otomatis</h2>\r\n<ul>\r\n  <li><strong>Auto-start/stop:</strong> Pompa menyala otomatis saat keran dibuka dan mati saat ditutup</li>\r\n  <li><strong>Dry-run protection:</strong> Otomatis mati ketika air habis untuk mencegah kerusakan motor</li>\r\n  <li><strong>Thermal overload protection:</strong> Melindungi motor dari panas berlebih</li>\r\n  <li><strong>Pressure tank:</strong> Mengurangi frekuensi hidup/mati pompa, memperpanjang usia pakai</li>\r\n</ul>\r\n\r\n<h2>Kesimpulan</h2>\r\n<p>Memilih pompa air yang tepat adalah investasi jangka panjang untuk kenyamanan keluarga Anda. Dengan mengikuti 7 panduan di atas, Anda bisa membuat keputusan yang tepat dan terhindar dari kerugian finansial. <strong>Butuh bantuan memilih?</strong> Tim teknis KTH siap membantu melalui WhatsApp atau kunjungi distributor terdekat.</p>",
+      "author": "Tim KTH",
+      "published_at": "2025-03-15T07:00:00+00:00",
+      "created_at": "2026-07-02T16:48:02.207731+00:00",
+      "updated_at": "2026-07-02T16:48:02.207731+00:00"
+    }
+  ],
+  "downloads": [
+    {
+      "id": "b32082b1-6aed-4acc-8d80-d5915926641f",
+      "title": "joko",
+      "type": "Brosur",
+      "file_url": "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/sign/public-media/downloads/47dfd791-accb-47ed-99fd-b38d49e03255.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMGNhMTczNy0wZDMxLTQ1MGYtYjQ4MC1lMTg5YWUxMDcyMGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdWJsaWMtbWVkaWEvZG93bmxvYWRzLzQ3ZGZkNzkxLWFjY2ItNDdlZC05OWZkLWIzOGQ0OWUwMzI1NS5wZGYiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgzMDQ3OTY2LCJleHAiOjIwOTg0MDc5NjZ9.6o7O8NJrfeHDOuPSivWziyiqUv_gtUc30rMfpI9CFrw",
+      "size": "467 KB",
+      "created_at": "2026-07-03T03:06:10.308608+00:00",
+      "updated_at": "2026-07-03T03:06:10.308608+00:00"
+    },
+    {
+      "id": "ffdcf7ce-a7ce-41a4-97fe-272a28872afa",
+      "title": "Katalog Pompa Air KTH 2026",
+      "type": "Katalog",
+      "file_url": "https://esnshphonvfpzelvbjmv.supabase.co/storage/v1/object/public/public/downloads/dummy.pdf",
+      "size": "1.5 MB",
+      "created_at": "2026-07-03T03:04:08.824352+00:00",
+      "updated_at": "2026-07-03T03:04:08.824352+00:00"
+    }
+  ]
+}
