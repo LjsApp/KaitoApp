@@ -212,9 +212,10 @@ function HomePage() {
       {/* ── CATEGORIES ── */}
       <section className="bg-card border-y border-border py-16 lg:py-20">
         <div className="mx-auto max-w-7xl container-px">
-          <Reveal className="mb-14">
+          <Reveal className="text-center mx-auto mb-14">
             <div className="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">Lini Produk</div>
             <h2 className="font-display font-extrabold text-3xl md:text-5xl tracking-tight">Temukan Pompa yang Tepat</h2>
+            <p className="mt-4 text-muted-foreground">Dari pompa rumah tangga hingga industri — kami punya solusinya.</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((c, i) => (
