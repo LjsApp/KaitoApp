@@ -86,12 +86,14 @@ async function safeFetch<T>(
   fallbackKey?: keyof typeof fallbackData
 ): Promise<T> {
   try {
+    let timerId: ReturnType<typeof setTimeout>;
     // Race antara request Supabase dan timeout 8 detik
     // Mencegah hang saat database paused (Supabase free-tier)
-    const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error(`[Timeout] Supabase fetch "${label}" exceeded 8s`)), 8000)
-    );
+    const timeout = new Promise<never>((_, reject) => {
+      timerId = setTimeout(() => reject(new Error(`[Timeout] Supabase fetch "${label}" exceeded 8s`)), 8000);
+    });
     const res = await Promise.race([promise, timeout]) as { data: unknown; error: { message: string; code?: string } | null };
+    clearTimeout(timerId!);
     if (res.error) {
       console.warn(`[Supabase API Error: ${label}]`, res.error);
       throw new Error(res.error.message);
@@ -139,8 +141,8 @@ export const listProductsByCategory = async (slug: string): Promise<DbProduct[]>
 
 export const getProductBySlug = async (slug: string): Promise<DbProduct | null> => {
   try {
-    const res = await supabase.from("products" as never).select(PRODUCT_SELECT).eq("slug", slug).maybeSingle();
-    const data = await safeFetch<unknown>(Promise.resolve(res), "product");
+    const promise = supabase.from("products" as never).select(PRODUCT_SELECT).eq("slug", slug).maybeSingle();
+    const data = await safeFetch<unknown>(promise, "product");
     if (!data) return null;
     return mapProducts([data])[0];
   } catch (err) {
@@ -155,8 +157,8 @@ export const listArticles = async (): Promise<DbArticle[]> =>
 
 export const getArticleBySlug = async (slug: string): Promise<DbArticle | null> => {
   try {
-    const res = await supabase.from("articles" as never).select("*").eq("slug", slug).maybeSingle();
-    return await safeFetch<DbArticle | null>(Promise.resolve(res), "article");
+    const promise = supabase.from("articles" as never).select("*").eq("slug", slug).maybeSingle();
+    return await safeFetch<DbArticle | null>(promise, "article");
   } catch (err) {
     const all = fallbackData.articles || [];
     return (all.find((a: any) => a.slug === slug) as DbArticle) || null;
@@ -170,8 +172,8 @@ const COMPANY_CLIENT_COLUMNS = "id,name,phone,whatsapp,email,instagram,facebook,
 
 export const getCompanyClient = async (): Promise<DbCompany> => {
   // Pilih kolom spesifik — JANGAN SELECT * (menghindari admin_username/admin_password_hash)
-  const res = await supabase.from("company_settings" as never).select(COMPANY_CLIENT_COLUMNS as never).eq("id", 1).maybeSingle();
-  const data = await safeFetch<DbCompany | null>(Promise.resolve(res), "company");
+  const promise = supabase.from("company_settings" as never).select(COMPANY_CLIENT_COLUMNS as never).eq("id", 1).maybeSingle();
+  const data = await safeFetch<DbCompany | null>(promise, "company");
   return data ?? ({
     name: "Kaito Hiro", phone: "", whatsapp: "", email: "", instagram: "", facebook: "",
     youtube: "", tiktok: "", address: "", map_embed: "", shopee_url: "", tokopedia_url: "", working_hours: "",
