@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
-import { qkCategories } from "@/lib/queries";
+import { qkCategories, qkCompany } from "@/lib/queries";
 import { useCompany } from "@/hooks/use-company";
 import { Logo } from "@/components/site/Logo";
 import { GlobalSearch } from "@/components/site/GlobalSearch";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type NavItem = { to: string; label: string; mega?: boolean };
 const NAV: NavItem[] = [
@@ -21,6 +22,7 @@ const NAV: NavItem[] = [
 
 export function SiteHeader() {
   const company = useCompany();
+  const { isLoading: companyLoading } = useQuery({ ...qkCompany(), staleTime: 60_000 });
   const { data: cats = [] } = useQuery({ ...qkCategories(), staleTime: 60_000 });
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -72,12 +74,18 @@ export function SiteHeader() {
       <div className="block border-b border-border/40 bg-brand-bg text-brand-foreground text-[10px] sm:text-xs">
         <div className="mx-auto max-w-7xl container-px flex h-9 items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-4">
-            <span className="inline-flex items-center gap-1.5">
-              <Phone className="h-3 w-3 hidden sm:block" /> {company.phone || "+62 21 5000 1234"}
-            </span>
-            <span className="opacity-70 hidden sm:inline">
-              {company.working_hours || "Senin–Sabtu, 08.00–17.00 WIB"}
-            </span>
+            {companyLoading ? (
+              <Skeleton className="h-4 w-40 sm:w-64 bg-white/20" />
+            ) : (
+              <>
+                <span className="inline-flex items-center gap-1.5">
+                  <Phone className="h-3 w-3 hidden sm:block" /> {company.phone || "+62 21 5000 1234"}
+                </span>
+                <span className="opacity-70 hidden sm:inline">
+                  {company.working_hours || "Senin–Sabtu, 08.00–17.00 WIB"}
+                </span>
+              </>
+            )}
           </div>
           <div className="flex items-center gap-3">
             <Link to="/download" className="hover:underline">
