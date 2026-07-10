@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFactory from "@/assets/hero-baru.jpg";
-import kthParts from "@/assets/kth-parts.png";
+import kthParts from "@/assets/kth-parts.jpg";
 import { useQuery } from "@tanstack/react-query";
 import { qkFeaturedProducts, qkCategories, qkArticles } from "@/lib/queries";
 import { STATS, WHY, TESTIMONIALS } from "@/data/content";
