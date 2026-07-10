@@ -374,13 +374,15 @@ function HomePage() {
               </div>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {[
-                  { v: "10+", l: "Tahun" },
-                  { v: "16+", l: "Distributor" },
-                  { v: "52+", l: "Agen" },
-                  { v: "24 Jam", l: "Non-Stop" },
+                  { v: 10, suffix: "+", l: "Tahun" },
+                  { v: 16, suffix: "+", l: "Distributor" },
+                  { v: 52, suffix: "+", l: "Agen" },
+                  { v: 24, suffix: " Jam", l: "Non-Stop" },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl bg-white/8 p-4">
-                    <div className="font-display font-black text-2xl text-white">{s.v}</div>
+                    <div className="font-display font-black text-2xl text-white">
+                      <Counter value={s.v} suffix={s.suffix} />
+                    </div>
                     <div className="text-xs text-white/60 mt-0.5">{s.l}</div>
                   </div>
                 ))}
